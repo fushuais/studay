@@ -1,0 +1,760 @@
+{
+  "meta": {
+    "source": "JASSO EJU pastpaper sample (open web)",
+    "fetchedAt": "2026-03-06T15:43:31.952723+00:00",
+    "indexURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/index.html",
+    "paperCount": 5,
+    "trackCount": 119
+  },
+  "papers": [
+    {
+      "title": "2018年第1回 | JASSO",
+      "sourcePage": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/pastpaper_2018_1.html",
+      "scriptPDF": "",
+      "tracks": [
+        {
+          "id": "pastpaper_2018_1-01",
+          "title": "2018年第1回 | JASSO 音声 1",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181intro.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-02",
+          "title": "2018年第1回 | JASSO 音声 2",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181inst.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-03",
+          "title": "2018年第1回 | JASSO 音声 3",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181cinst.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-04",
+          "title": "2018年第1回 | JASSO 音声 4",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181cex.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-05",
+          "title": "2018年第1回 | JASSO 音声 5",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181cexinst.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-06",
+          "title": "2018年第1回 | JASSO 音声 6",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181ac04.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-07",
+          "title": "2018年第1回 | JASSO 音声 7",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181cend.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-08",
+          "title": "2018年第1回 | JASSO 音声 8",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181linst.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-09",
+          "title": "2018年第1回 | JASSO 音声 9",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181lex.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-10",
+          "title": "2018年第1回 | JASSO 音声 10",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181lexinst.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-11",
+          "title": "2018年第1回 | JASSO 音声 11",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al13.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-12",
+          "title": "2018年第1回 | JASSO 音声 12",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al14.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-13",
+          "title": "2018年第1回 | JASSO 音声 13",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al15.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-14",
+          "title": "2018年第1回 | JASSO 音声 14",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al16.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-15",
+          "title": "2018年第1回 | JASSO 音声 15",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al17.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-16",
+          "title": "2018年第1回 | JASSO 音声 16",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al18.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-17",
+          "title": "2018年第1回 | JASSO 音声 17",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al19.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-18",
+          "title": "2018年第1回 | JASSO 音声 18",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al20.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-19",
+          "title": "2018年第1回 | JASSO 音声 19",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al21.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-20",
+          "title": "2018年第1回 | JASSO 音声 20",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al22.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-21",
+          "title": "2018年第1回 | JASSO 音声 21",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al23.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-22",
+          "title": "2018年第1回 | JASSO 音声 22",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al24.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-23",
+          "title": "2018年第1回 | JASSO 音声 23",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al25.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-24",
+          "title": "2018年第1回 | JASSO 音声 24",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al26.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-25",
+          "title": "2018年第1回 | JASSO 音声 25",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181al27.wav"
+        },
+        {
+          "id": "pastpaper_2018_1-26",
+          "title": "2018年第1回 | JASSO 音声 26",
+          "category": "総合",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2026/01/14/181lend.wav"
+        }
+      ]
+    },
+    {
+      "title": "2017年第2回 | JASSO",
+      "sourcePage": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/pastpaper_2017_2.html",
+      "scriptPDF": "",
+      "tracks": [
+        {
+          "id": "pastpaper_2017_2-01",
+          "title": "2017年第2回 | JASSO 音声 1",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac01.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-02",
+          "title": "2017年第2回 | JASSO 音声 2",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac02.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-03",
+          "title": "2017年第2回 | JASSO 音声 3",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac03.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-04",
+          "title": "2017年第2回 | JASSO 音声 4",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac04.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-05",
+          "title": "2017年第2回 | JASSO 音声 5",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac05.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-06",
+          "title": "2017年第2回 | JASSO 音声 6",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac06.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-07",
+          "title": "2017年第2回 | JASSO 音声 7",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac08.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-08",
+          "title": "2017年第2回 | JASSO 音声 8",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac10.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-09",
+          "title": "2017年第2回 | JASSO 音声 9",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac12.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-10",
+          "title": "2017年第2回 | JASSO 音声 10",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac16.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-11",
+          "title": "2017年第2回 | JASSO 音声 11",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172ac17.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-12",
+          "title": "2017年第2回 | JASSO 音声 12",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al19.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-13",
+          "title": "2017年第2回 | JASSO 音声 13",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al20.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-14",
+          "title": "2017年第2回 | JASSO 音声 14",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al21.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-15",
+          "title": "2017年第2回 | JASSO 音声 15",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al22.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-16",
+          "title": "2017年第2回 | JASSO 音声 16",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al23.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-17",
+          "title": "2017年第2回 | JASSO 音声 17",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al24.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-18",
+          "title": "2017年第2回 | JASSO 音声 18",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al25.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-19",
+          "title": "2017年第2回 | JASSO 音声 19",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al26.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-20",
+          "title": "2017年第2回 | JASSO 音声 20",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al27.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-21",
+          "title": "2017年第2回 | JASSO 音声 21",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al28.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-22",
+          "title": "2017年第2回 | JASSO 音声 22",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al29.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-23",
+          "title": "2017年第2回 | JASSO 音声 23",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al30.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-24",
+          "title": "2017年第2回 | JASSO 音声 24",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al31.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-25",
+          "title": "2017年第2回 | JASSO 音声 25",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al32.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-26",
+          "title": "2017年第2回 | JASSO 音声 26",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al33.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-27",
+          "title": "2017年第2回 | JASSO 音声 27",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al34.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-28",
+          "title": "2017年第2回 | JASSO 音声 28",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al35.wav"
+        },
+        {
+          "id": "pastpaper_2017_2-29",
+          "title": "2017年第2回 | JASSO 音声 29",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/172al36.wav"
+        }
+      ]
+    },
+    {
+      "title": "2017年第1回 | JASSO",
+      "sourcePage": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/pastpaper_2017_1.html",
+      "scriptPDF": "",
+      "tracks": [
+        {
+          "id": "pastpaper_2017_1-01",
+          "title": "2017年第1回 | JASSO 音声 1",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac01_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-02",
+          "title": "2017年第1回 | JASSO 音声 2",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac02_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-03",
+          "title": "2017年第1回 | JASSO 音声 3",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac03_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-04",
+          "title": "2017年第1回 | JASSO 音声 4",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac04_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-05",
+          "title": "2017年第1回 | JASSO 音声 5",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac05.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-06",
+          "title": "2017年第1回 | JASSO 音声 6",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac06.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-07",
+          "title": "2017年第1回 | JASSO 音声 7",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac07.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-08",
+          "title": "2017年第1回 | JASSO 音声 8",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac09.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-09",
+          "title": "2017年第1回 | JASSO 音声 9",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac10.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-10",
+          "title": "2017年第1回 | JASSO 音声 10",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac13.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-11",
+          "title": "2017年第1回 | JASSO 音声 11",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac16.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-12",
+          "title": "2017年第1回 | JASSO 音声 12",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171ac17.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-13",
+          "title": "2017年第1回 | JASSO 音声 13",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al19_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-14",
+          "title": "2017年第1回 | JASSO 音声 14",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al20_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-15",
+          "title": "2017年第1回 | JASSO 音声 15",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al21_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-16",
+          "title": "2017年第1回 | JASSO 音声 16",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al22_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-17",
+          "title": "2017年第1回 | JASSO 音声 17",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al23_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-18",
+          "title": "2017年第1回 | JASSO 音声 18",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al24_2.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-19",
+          "title": "2017年第1回 | JASSO 音声 19",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al25_2.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-20",
+          "title": "2017年第1回 | JASSO 音声 20",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al26_2.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-21",
+          "title": "2017年第1回 | JASSO 音声 21",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al27_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-22",
+          "title": "2017年第1回 | JASSO 音声 22",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al28_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-23",
+          "title": "2017年第1回 | JASSO 音声 23",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al29_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-24",
+          "title": "2017年第1回 | JASSO 音声 24",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al30_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-25",
+          "title": "2017年第1回 | JASSO 音声 25",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al31_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-26",
+          "title": "2017年第1回 | JASSO 音声 26",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al32_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-27",
+          "title": "2017年第1回 | JASSO 音声 27",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al33_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-28",
+          "title": "2017年第1回 | JASSO 音声 28",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al34_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-29",
+          "title": "2017年第1回 | JASSO 音声 29",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al35_1.wav"
+        },
+        {
+          "id": "pastpaper_2017_1-30",
+          "title": "2017年第1回 | JASSO 音声 30",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/28/171al36_1.wav"
+        }
+      ]
+    },
+    {
+      "title": "2016年第2回 | JASSO",
+      "sourcePage": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/pastpaper_2016_2.html",
+      "scriptPDF": "",
+      "tracks": [
+        {
+          "id": "pastpaper_2016_2-01",
+          "title": "2016年第2回 | JASSO 音声 1",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162ac01.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-02",
+          "title": "2016年第2回 | JASSO 音声 2",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162ac05.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-03",
+          "title": "2016年第2回 | JASSO 音声 3",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162ac06.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-04",
+          "title": "2016年第2回 | JASSO 音声 4",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al13.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-05",
+          "title": "2016年第2回 | JASSO 音声 5",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al14.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-06",
+          "title": "2016年第2回 | JASSO 音声 6",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al15.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-07",
+          "title": "2016年第2回 | JASSO 音声 7",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al16.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-08",
+          "title": "2016年第2回 | JASSO 音声 8",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al17.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-09",
+          "title": "2016年第2回 | JASSO 音声 9",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al19_1.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-10",
+          "title": "2016年第2回 | JASSO 音声 10",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al19.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-11",
+          "title": "2016年第2回 | JASSO 音声 11",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al20.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-12",
+          "title": "2016年第2回 | JASSO 音声 12",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al21.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-13",
+          "title": "2016年第2回 | JASSO 音声 13",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al22.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-14",
+          "title": "2016年第2回 | JASSO 音声 14",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al23.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-15",
+          "title": "2016年第2回 | JASSO 音声 15",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al24.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-16",
+          "title": "2016年第2回 | JASSO 音声 16",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al25.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-17",
+          "title": "2016年第2回 | JASSO 音声 17",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al26.wav"
+        },
+        {
+          "id": "pastpaper_2016_2-18",
+          "title": "2016年第2回 | JASSO 音声 18",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/162al27.wav"
+        }
+      ]
+    },
+    {
+      "title": "2016年第1回 | JASSO",
+      "sourcePage": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/pastpaper_2016_1.html",
+      "scriptPDF": "",
+      "tracks": [
+        {
+          "id": "pastpaper_2016_1-01",
+          "title": "2016年第1回 | JASSO 音声 1",
+          "category": "聴解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161ac04.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-02",
+          "title": "2016年第1回 | JASSO 音声 2",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al13.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-03",
+          "title": "2016年第1回 | JASSO 音声 3",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al14.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-04",
+          "title": "2016年第1回 | JASSO 音声 4",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al15.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-05",
+          "title": "2016年第1回 | JASSO 音声 5",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al16.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-06",
+          "title": "2016年第1回 | JASSO 音声 6",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al17.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-07",
+          "title": "2016年第1回 | JASSO 音声 7",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al18.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-08",
+          "title": "2016年第1回 | JASSO 音声 8",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al19.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-09",
+          "title": "2016年第1回 | JASSO 音声 9",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al20.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-10",
+          "title": "2016年第1回 | JASSO 音声 10",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al21.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-11",
+          "title": "2016年第1回 | JASSO 音声 11",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al22.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-12",
+          "title": "2016年第1回 | JASSO 音声 12",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al23.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-13",
+          "title": "2016年第1回 | JASSO 音声 13",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al24.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-14",
+          "title": "2016年第1回 | JASSO 音声 14",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al25.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-15",
+          "title": "2016年第1回 | JASSO 音声 15",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al26.wav"
+        },
+        {
+          "id": "pastpaper_2016_1-16",
+          "title": "2016年第1回 | JASSO 音声 16",
+          "category": "聴読解",
+          "audioURL": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/03/31/161al27.wav"
+        }
+      ]
+    }
+  ]
+}
