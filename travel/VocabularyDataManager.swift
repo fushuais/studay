@@ -35,6 +35,10 @@ struct VocabularyItem: Codable {
     let partOfSpeech: String
     let lesson: String
     let sheet: String
+    // 新增：3条例句（中英文翻译通过API获取）
+    let japaneseExamples: [String]?
+    let chineseExamples: [String]?
+    let englishExamples: [String]?
 }
 
 // MARK: - 应用词汇模型
@@ -46,9 +50,17 @@ struct AppVocabularyWord: Identifiable, Codable {
     let partOfSpeech: String
     let lesson: String
     let level: String
-    let japaneseExample: String
-    let englishExample: String
-    let chineseExample: String
+    // 3条日语例句
+    let japaneseExamples: [String]
+    // 3条中文翻译
+    let chineseExamples: [String]
+    // 3条英文翻译
+    let englishExamples: [String]
+    
+    // 兼容旧版本数据的初始化器
+    var japaneseExample: String { japaneseExamples.first ?? "" }
+    var englishExample: String { englishExamples.first ?? "" }
+    var chineseExample: String { chineseExamples.first ?? "" }
     
     init(from item: VocabularyItem, level: String) {
         // 使用基于内容的稳定 UUID，保证同一个单词在不同启动之间 ID 不变
@@ -63,10 +75,29 @@ struct AppVocabularyWord: Identifiable, Codable {
         self.lesson = simplifiedLesson
         self.level = level
         
-        // 生成示例句子
-        self.japaneseExample = Self.generateJapaneseExample(word: item.word, partOfSpeech: item.partOfSpeech)
-        self.englishExample = Self.generateEnglishExample(word: item.word, meaning: item.meaning)
-        self.chineseExample = Self.generateChineseExample(word: item.word, meaning: item.meaning)
+        // 生成3条示例句子
+        let generatedJP = Self.generateJapaneseExamples(word: item.word, partOfSpeech: item.partOfSpeech)
+        let generatedEN = Self.generateEnglishExamples(word: item.word, meaning: item.meaning)
+        let generatedCN = Self.generateChineseExamples(word: item.word, meaning: item.meaning)
+        
+        // 检查是否有预翻译的数据
+        if let translatedExamples = item.japaneseExamples, !translatedExamples.isEmpty {
+            self.japaneseExamples = translatedExamples
+        } else {
+            self.japaneseExamples = generatedJP
+        }
+        
+        if let translatedExamples = item.chineseExamples, !translatedExamples.isEmpty {
+            self.chineseExamples = translatedExamples
+        } else {
+            self.chineseExamples = generatedCN
+        }
+        
+        if let translatedExamples = item.englishExamples, !translatedExamples.isEmpty {
+            self.englishExamples = translatedExamples
+        } else {
+            self.englishExamples = generatedEN
+        }
     }
     
     // 将繁体中文转换为简体中文
@@ -80,31 +111,54 @@ struct AppVocabularyWord: Identifiable, Codable {
         return result
     }
     
-    private static func generateJapaneseExample(word: String, partOfSpeech: String) -> String {
-        let examples = [
-            "これは\(word)の例文です。",
-            "\(word)を使ってみましょう。",
-            "\(word)の意味を理解する。",
-            "\(word)を実際に使う。",
-            "\(word)の使い方を学ぶ。"
+    private static func generateJapaneseExamples(word: String, partOfSpeech: String) -> [String] {
+        let templates: [String: [String]] = [
+            "名词": [
+                "これは\(word)です。",
+                "\(word)使えますか。",
+                "\(word)が好きです。"
+            ],
+            "代词": [
+                "それは\(word)です。",
+                "\(word)は何ですか。",
+                "\(word)が好きです。"
+            ],
+            "动词": [
+                "\(word)てください。",
+                "\(word)ます。",
+                "\(word)たいです。"
+            ],
+            "形容词": [
+                "\(word�니다。",
+                "\(word)いです。",
+                "\(word)くないです。"
+            ],
+            "default": [
+                "これは\(word)の例文です。",
+                "\(word)を使ってみましょう。",
+                "\(word)の意味を理解する。"
+            ]
         ]
-        return examples.randomElement() ?? "\(word)の例文"
+        
+        let selected = templates[partOfSpeech] ?? templates["default"]!
+        return selected
     }
     
-    private static func generateChineseExample(word: String, meaning: String) -> String {
+    private static func generateChineseExamples(word: String, meaning: String) -> [String] {
         // 使用词汇的中文意思生成中文例句
-        return "这是「\(word)」的例句：\(meaning)。"
+        return [
+            "这是「\(word)」的例句：\(meaning)。",
+            "请使用「\(word)」这个词。",
+            "「\(word)」的意思是\(meaning)。"
+        ]
     }
 
-    private static func generateEnglishExample(word: String, meaning: String) -> String {
-        let examples = [
+    private static func generateEnglishExamples(word: String, meaning: String) -> [String] {
+        return [
             "This is an example of \(word).",
             "Let's try using \(word).",
-            "Understanding the meaning of \(word).",
-            "Using \(word) in practice.",
-            "Learning how to use \(word)."
+            "Understanding the meaning of \(word)."
         ]
-        return examples.randomElement() ?? "Example of \(word)"
     }
     
     /// 根据字符串生成稳定的 UUID，用于在不同启动之间保持同一单词的 ID 一致
@@ -192,6 +246,15 @@ class VocabularyDataManager: ObservableObject {
     // MARK: - 各来源加载辅助方法
     
     private func loadPrimaryWordsFromBundle() -> [AppVocabularyWord]? {
+        // 优先尝试带例句的版本
+        if let url = Bundle.main.url(forResource: "jlpt_primary_summary_with_examples", withExtension: "json") {
+            print("找到 Bundle 中的带例句词汇文件: \(url)")
+            if let words = loadWordsFromURL(url, level: "标准日本语初级上册", sourceType: .primary) {
+                print("成功从 Bundle 加载带例句词汇数据: \(words.count) 个单词")
+                return words
+            }
+        }
+        // 回退到旧版本
         if let url = Bundle.main.url(forResource: "jlpt_primary_summary", withExtension: "json") {
             print("找到 Bundle 中的初级词汇文件: \(url)")
             if let words = loadWordsFromURL(url, level: "标准日本语初级上册", sourceType: .primary) {
@@ -204,6 +267,15 @@ class VocabularyDataManager: ObservableObject {
     
     private func loadPrimaryWordsFromDocuments() -> [AppVocabularyWord]? {
         let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        // 优先尝试带例句的版本
+        if let url = documentsPath?.appendingPathComponent("jlpt_primary_summary_with_examples.json") {
+            print("尝试从 Documents 加载带例句词汇: \(url)")
+            if let words = loadWordsFromURL(url, level: "标准日本语初级上册", sourceType: .primary) {
+                print("成功从 Documents 加载带例句词汇数据: \(words.count) 个单词")
+                return words
+            }
+        }
+        // 回退到旧版本
         if let url = documentsPath?.appendingPathComponent("jlpt_primary_summary.json") {
             print("尝试从 Documents 加载初级词汇: \(url)")
             if let words = loadWordsFromURL(url, level: "标准日本语初级上册", sourceType: .primary) {

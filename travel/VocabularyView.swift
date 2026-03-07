@@ -14,20 +14,25 @@ struct VocabularyWord: Identifiable, Codable {
     let word: String
     let pronunciation: String
     let meaning: String
-    let japaneseExample: String
-    let englishExample: String
-    let chineseExample: String
+    let japaneseExamples: [String]
+    let englishExamples: [String]
+    let chineseExamples: [String]
     let lesson: String  // 课程编号，如 "第1课"
     let level: String   // 级别，如 "大家的日本语", "N3", "N2", "N1"
     
-    init(word: String, pronunciation: String, meaning: String, japaneseExample: String, englishExample: String, chineseExample: String, lesson: String, level: String) {
+    // 兼容旧版本
+    var japaneseExample: String { japaneseExamples.first ?? "" }
+    var englishExample: String { englishExamples.first ?? "" }
+    var chineseExample: String { chineseExamples.first ?? "" }
+    
+    init(word: String, pronunciation: String, meaning: String, japaneseExamples: [String], englishExamples: [String], chineseExamples: [String], lesson: String, level: String) {
         self.id = UUID()
         self.word = word
         self.pronunciation = pronunciation
         self.meaning = meaning
-        self.japaneseExample = japaneseExample
-        self.englishExample = englishExample
-        self.chineseExample = chineseExample
+        self.japaneseExamples = japaneseExamples
+        self.englishExamples = englishExamples
+        self.chineseExamples = chineseExamples
         self.lesson = lesson
         self.level = level
     }
@@ -37,9 +42,9 @@ struct VocabularyWord: Identifiable, Codable {
         self.word = appWord.word
         self.pronunciation = appWord.reading
         self.meaning = appWord.meaning
-        self.japaneseExample = appWord.japaneseExample
-        self.englishExample = appWord.englishExample
-        self.chineseExample = appWord.chineseExample
+        self.japaneseExamples = appWord.japaneseExamples
+        self.englishExamples = appWord.englishExamples
+        self.chineseExamples = appWord.chineseExamples
         self.lesson = appWord.lesson
         self.level = appWord.level
     }
@@ -642,68 +647,76 @@ struct CardView: View {
                 Text(word.word)
                     .font(.system(size: 48, weight: .bold))
                     .foregroundColor(.orange)
-                
+
+                // 假名 - 更大更醒目
                 Text(word.reading)
-                    .font(.title3)
+                    .font(.system(size: 24, weight: .medium))
+                    .foregroundColor(.blue)
+
+                // 罗马字注音
+                Text(toRomanji(word.reading))
+                    .font(.system(size: 16))
                     .foregroundColor(.secondary)
-                
+
                 Text(word.meaning)
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(.primary)
             }
-            .padding(.top, 40)
+            .padding(.top, 30)
             
             // 例句
             if showExample {
                 VStack(alignment: .leading, spacing: 16) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack {
-                            Image(systemName: "character.book.closed")
-                                .foregroundColor(.orange)
-                            Text("日语例句")
-                                .font(.headline)
-                                .foregroundColor(.secondary)
+                    // 3条例句循环显示
+                    ForEach(0..<min(3, word.japaneseExamples.count), id: \.self) { index in
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Image(systemName: "character.book.closed")
+                                    .foregroundColor(.orange)
+                                Text("日语例句 \(index + 1)")
+                                    .font(.headline)
+                                    .foregroundColor(.secondary)
+                            }
+                            
+                            Text(word.japaneseExamples[index])
+                                .font(.body)
+                                .foregroundColor(.primary)
+                            
+                            if index < word.chineseExamples.count {
+                                HStack {
+                                    Image(systemName: "a.circle")
+                                        .foregroundColor(.green)
+                                    Text("中文翻译")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
+                                .padding(.top, 4)
+                                
+                                Text(word.chineseExamples[index])
+                                    .font(.body)
+                                    .foregroundColor(.primary)
+                            }
+                            
+                            if index < word.englishExamples.count {
+                                HStack {
+                                    Image(systemName: "textformat.abc")
+                                        .foregroundColor(.blue)
+                                    Text("English")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
+                                .padding(.top, 4)
+                                
+                                Text(word.englishExamples[index])
+                                    .font(.body)
+                                    .foregroundColor(.primary)
+                            }
                         }
-                        Text(word.japaneseExample)
-                            .font(.body)
-                            .foregroundColor(.primary)
+                        .padding()
+                        .background(Color.orange.opacity(0.08))
+                        .cornerRadius(12)
                     }
-                    .padding()
-                    .background(Color.orange.opacity(0.1))
-                    .cornerRadius(12)
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack {
-                            Image(systemName: "a.circle")
-                                .foregroundColor(.green)
-                            Text("中文翻译")
-                                .font(.headline)
-                                .foregroundColor(.secondary)
-                        }
-                        Text(word.chineseExample)
-                            .font(.body)
-                            .foregroundColor(.primary)
-                    }
-                    .padding()
-                    .background(Color.green.opacity(0.1))
-                    .cornerRadius(12)
-
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack {
-                            Image(systemName: "textformat.abc")
-                                .foregroundColor(.blue)
-                            Text("英文翻译")
-                                .font(.headline)
-                                .foregroundColor(.secondary)
-                        }
-                        Text(word.englishExample)
-                            .font(.body)
-                            .foregroundColor(.primary)
-                    }
-                    .padding()
-                    .background(Color.blue.opacity(0.1))
-                    .cornerRadius(12)
                 }
                 .transition(.opacity)
             }
@@ -784,6 +797,61 @@ struct CompletionView: View {
     }
 }
 
+// MARK: - 假名转罗马字转换
+func toRomanji(_ hiragana: String) -> String {
+    let map: [String: String] = [
+        "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",
+        "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko",
+        "さ": "sa", "し": "shi", "す": "su", "せ": "se", "そ": "so",
+        "た": "ta", "ち": "chi", "つ": "tsu", "て": "te", "と": "to",
+        "な": "na", "に": "ni", "ぬ": "nu", "ね": "ne", "の": "no",
+        "は": "ha", "ひ": "hi", "ふ": "fu", "へ": "he", "ほ": "ho",
+        "ま": "ma", "み": "mi", "む": "mu", "め": "me", "も": "mo",
+        "や": "ya", "ゆ": "yu", "よ": "yo",
+        "ら": "ra", "り": "ri", "る": "ru", "れ": "re", "ろ": "ro",
+        "わ": "wa", "を": "wo", "ん": "n",
+        "が": "ga", "ぎ": "gi", "ぐ": "gu", "げ": "ge", "ご": "go",
+        "ざ": "za", "じ": "ji", "ず": "zu", "ぜ": "ze", "ぞ": "zo",
+        "だ": "da", "ぢ": "ji", "づ": "zu", "で": "de", "ど": "do",
+        "ば": "ba", "び": "bi", "ぶ": "bu", "べ": "be", "ぼ": "bo",
+        "ぱ": "pa", "ぴ": "pi", "ぷ": "pu", "ぺ": "pe", "ぽ": "po",
+        "きゃ": "kya", "きゅ": "kyu", "きょ": "kyo",
+        "しゃ": "sha", "しゅ": "shu", "しょ": "sho",
+        "ちゃ": "cha", "ちゅ": "chu", "ちょ": "cho",
+        "にゃ": "nya", "にゅ": "nyu", "にょ": "nyo",
+        "りゃ": "rya", "りゅ": "ryu", "りょ": "ryo",
+        "ぎゃ": "gya", "ぎゅ": "gyu", "ぎょ": "gyo",
+        "じゃ": "ja", "じゅ": "ju", "じょ": "jo",
+        "びゃ": "bya", "びゅ": "byu", "びょ": "byo",
+        "ぴゃ": "pya", "ぴゅ": "pyu", "ぴょ": "pyo"
+    ]
+
+    var result = ""
+    var chars = Array(hiragana)
+    var i = 0
+
+    while i < chars.count {
+        // 尝试匹配两个字符
+        if i + 1 < chars.count {
+            let twoChars = String(chars[i]) + String(chars[i + 1])
+            if let val = map[twoChars] {
+                result += val
+                i += 2
+                continue
+            }
+        }
+        // 匹配单个字符
+        let oneChar = String(chars[i])
+        if let val = map[oneChar] {
+            result += val
+        } else {
+            result += oneChar
+        }
+        i += 1
+    }
+
+    return result
+}
 
 
 #Preview {
