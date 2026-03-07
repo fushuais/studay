@@ -129,7 +129,7 @@ struct AppVocabularyWord: Identifiable, Codable {
                 "\(word)たいです。"
             ],
             "形容词": [
-                "\(word�니다。",
+                "\(word)です。",
                 "\(word)いです。",
                 "\(word)くないです。"
             ],
@@ -387,7 +387,10 @@ class VocabularyDataManager: ObservableObject {
                 meaning: meaning,
                 partOfSpeech: pos,
                 lesson: lesson,
-                sheet: ""
+                sheet: "",
+                japaneseExamples: nil,
+                chineseExamples: nil,
+                englishExamples: nil
             )
             return AppVocabularyWord(from: tempItem, level: "标准日本语初级上册")
         }
