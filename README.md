@@ -1,47 +1,36 @@
-# 🏯 京都旅游 App
+# 🎓 日语学习 App
 
-> 探索千年古都的魅力 - 一款精美的iOS旅游应用
+> 轻松掌握日语 - 专业的iOS日语学习应用
 
 [![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/platform-iOS%2018.0%2B-lightgrey.svg)](https://developer.apple.com)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[📱 查看演示网站](https://fushuais.github.io/travel/)
+[📱 查看演示网站](https://fushuais.github.io/studay/)
 
 ## ✨ 功能特点
 
-### 📍 精选位置
-探索京都最著名的景点，包括：
-- 🏯 清水寺 - 世界文化遗产
-- ⛩️ 伏见稻荷大社 - 千本鸟居
-- 🏛️ 金阁寺 - 金光闪闪的禅寺
-- 🎋 岚山竹林 - 如诗如画的小径
-- 🎎 祇园 - 传统艺伎区
-- 🏰 二条城 - 德川家康的城堡
+### 📚 词汇学习
+系统的日语词汇学习功能：
+- 🎯 N5-N1 级别词汇分类
+- 🔤 日语假名、汉字、读音学习
+- 📖 详细的中文释义和例句
+- 💾 离线词汇库支持
+- ⭐ 收藏重要词汇
 
-每个景点都配有高质量的真实照片和详细介绍。
+### 👂 听力训练
+专业的日语听力练习：
+- 🎧 标准日语发音训练
+- 📝 JLPT 考试听力模拟
+- 🔄 重复播放和速度调节
+- ✅ 听力理解测试
 
-### 🍜 地道美食
-品尝最正宗的京都美食：
-- 🍱 怀石料理 - 精致的传统多道料理
-- 🍜 京都拉面 - 浓郁的猪骨汤底
-- 🍵 抹茶甜点 - 宇治抹茶制作
-- 🥘 豆腐料理 - 清泉制作的嫩滑豆腐
-- 🍚 鳗鱼饭 - 炭火烤制
-- 🍣 京都寿司 - 新鲜海鲜
-
-包含价格参考，让你轻松规划美食之旅。
-
-### 🏠 舒适住宿
-精选各类住宿选择：
-- 传统町屋民宿
-- 温泉旅馆
-- 精品酒店
-- 禅意民宿
-- 五星度假村
-- 青年旅社
-
-提供详细的价格、评分和特色介绍。
+### 📝 语法练习
+系统的日语语法学习：
+- 📚 基础到高级语法讲解
+- ✍️ 语法填空练习
+- 🔄 语法结构分析
+- 📈 学习进度跟踪
 
 ## 📱 技术栈
 
@@ -50,10 +39,11 @@
 - **最低版本**: iOS 18.0
 - **架构**: MVVM
 - **特性**:
-  - 异步图片加载
+  - JSON 词汇数据管理
   - 现代化UI设计
   - 响应式布局
   - 底部Tab导航
+  - 离线学习支持
 
 ## 🚀 快速开始
 
@@ -81,9 +71,9 @@ open travel.xcodeproj
 ## 📸 截图
 
 <div align="center">
-  <img src="screenshots/locations.png" width="250" alt="位置页面">
-  <img src="screenshots/food.png" width="250" alt="美食页面">
-  <img src="screenshots/accommodation.png" width="250" alt="住宿页面">
+  <img src="screenshots/vocabulary.png" width="250" alt="词汇学习页面">
+  <img src="screenshots/listening.png" width="250" alt="听力训练页面">
+  <img src="screenshots/grammar.png" width="250" alt="语法练习页面">
 </div>
 
 ## 🎨 设计特色
@@ -91,7 +81,7 @@ open travel.xcodeproj
 - **现代化UI**: 采用卡片式设计，美观大方
 - **流畅动画**: 丰富的交互动画和过渡效果
 - **响应式**: 完美支持iPhone和iPad
-- **主题色**: 橙色主题，代表日本传统色彩
+- **主题色**: 蓝色主题，代表学习与智慧
 
 ## 📂 项目结构
 
@@ -100,28 +90,30 @@ travel/
 ├── travel/
 │   ├── travelApp.swift          # 应用入口
 │   ├── ContentView.swift        # 主视图(TabView)
-│   ├── LocationView.swift       # 位置页面
-│   ├── FoodView.swift           # 美食页面
-│   ├── AccommodationView.swift  # 住宿页面
+│   ├── VocabularyView.swift     # 词汇学习页面
+│   ├── LocationView.swift       # 其他功能页面
+│   ├── jlpt_intermediate_summary.json  # 词汇数据
 │   └── Assets.xcassets/         # 资源文件
 ├── travelTests/                 # 单元测试
 ├── travelUITests/               # UI测试
 └── docs/                        # 宣传网页
-    └── index.html
+    ├── index.html
+    └── admin.html
 ```
 
 ## 🔧 配置说明
 
-### 网络权限
+### 数据管理
 
-项目已配置`NSAppTransportSecurity`以支持网络图片加载：
+项目包含完整的JLPT词汇数据，支持离线学习：
 
-```xml
-<key>NSAppTransportSecurity</key>
-<dict>
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
-</dict>
+```json
+{
+  "word": "ありがとう",
+  "reading": "arigatou", 
+  "meaning": "谢谢",
+  "level": "N5"
+}
 ```
 
 ## 🤝 贡献
@@ -136,12 +128,12 @@ travel/
 
 ## 📝 开发计划
 
-- [ ] 添加地图集成
-- [ ] 实现离线收藏功能
-- [ ] 添加多语言支持 (English, 日本語)
-- [ ] 集成天气信息
-- [ ] 添加行程规划功能
-- [ ] 用户评论和评分系统
+- [ ] 添加发音功能
+- [ ] 实现学习进度跟踪
+- [ ] 添加测试和评估功能
+- [ ] 集成语音识别
+- [ ] 添加每日学习提醒
+- [ ] 用户学习数据分析
 
 ## 📄 许可证
 
@@ -153,7 +145,7 @@ travel/
 
 ## 🙏 致谢
 
-- 图片来源: [Unsplash](https://unsplash.com)
+- 词汇数据来源: JLPT官方词汇表
 - 设计灵感: Apple Design Resources
 - Icons: SF Symbols
 
@@ -168,7 +160,6 @@ travel/
 ---
 
 <div align="center">
-  <p>Made with ❤️ for travelers</p>
-  <p>© 2026 京都旅游 App. All rights reserved.</p>
+  <p>Made with ❤️ for Japanese learners</p>
+  <p>© 2026 日语学习 App. All rights reserved.</p>
 </div>
-# studay
