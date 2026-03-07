@@ -1,0 +1,3524 @@
+{
+  "meta": {
+    "sourceFile": "大家的日本语第一册词汇",
+    "generatedAt": "2026-03-07",
+    "counts": {
+      "primary1": 439,
+      "total": 439
+    }
+  },
+  "primary1": [
+    {
+      "word": "私",
+      "reading": "わたし",
+      "meaning": "我",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "わたしたち",
+      "reading": "わたしたち",
+      "meaning": "我们",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "あなた",
+      "reading": "あなた",
+      "meaning": "你，妳",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "あの人",
+      "reading": "あのひと",
+      "meaning": "他，她，那个人",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "皆さん",
+      "reading": "みなさん",
+      "meaning": "各位，大家",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "～さん",
+      "reading": "～先生，～小姐，～女士",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "～ちゃん",
+      "reading": "用于小孩的名字后",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "～君",
+      "reading": "～君（用于男孩的名字后）",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "～じん",
+      "reading": "～人（表国籍）",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "先生",
+      "reading": "せんせい",
+      "meaning": "老师，教导者",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "教師",
+      "reading": "きょうし",
+      "meaning": "教师",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "学生",
+      "reading": "がくせい",
+      "meaning": "学生",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "社員",
+      "reading": "しゃいん",
+      "meaning": "～公司的职员",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "銀行員",
+      "reading": "ぎんこういん",
+      "meaning": "银行员",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "医者",
+      "reading": "いしゃ",
+      "meaning": "医生",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "研究者",
+      "reading": "けんきゅうしゃ",
+      "meaning": "研究人员",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "エンジニア",
+      "reading": "工程师",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "大学",
+      "reading": "だいがく",
+      "meaning": "大学",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "病院",
+      "reading": "びょういん",
+      "meaning": "医院",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "電気",
+      "reading": "てんき",
+      "meaning": "电，电灯",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "だれ",
+      "reading": "谁",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "何歳",
+      "reading": "なんさい",
+      "meaning": "几岁",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "はい",
+      "reading": "是，对",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "いいえ",
+      "reading": "不，不是",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第01课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "これ",
+      "reading": "这（事物近己方）",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "それ",
+      "reading": "那（事物近对方）",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "あれ",
+      "reading": "那（事物在远方）",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "この～",
+      "reading": "这（近己方）",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "その～",
+      "reading": "那（近对方）",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "あの～",
+      "reading": "那（远方）",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "本",
+      "reading": "ほん",
+      "meaning": "书本，书籍",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "辞書",
+      "reading": "じしょ",
+      "meaning": "词典",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "雑誌",
+      "reading": "ざssi",
+      "meaning": "杂志",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "新聞",
+      "reading": "しんぶん",
+      "meaning": "报纸",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ノート",
+      "reading": "笔记本",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "名刺",
+      "reading": "めいし",
+      "meaning": "名片",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "カード",
+      "reading": "卡片",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "鉛筆",
+      "reading": "えんぴつ",
+      "meaning": "铅笔",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ボールペン",
+      "reading": "原子笔",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "かぎ",
+      "reading": "钥匙",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "時計",
+      "reading": "とけい",
+      "meaning": "钟表",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "傘",
+      "reading": "かさ",
+      "meaning": "伞",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "かばん",
+      "reading": "书包，手提包",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "テレビ",
+      "reading": "电视",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "カメラ",
+      "reading": "照相机",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "コンピューター",
+      "reading": "电脑",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "机",
+      "reading": "つくえ",
+      "meaning": "桌子",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "いす",
+      "reading": "椅子",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "英語",
+      "reading": "えいご",
+      "meaning": "英语",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "日本語",
+      "reading": "にほんご",
+      "meaning": "日语",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "何",
+      "reading": "什么",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第02课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ここ",
+      "reading": "这里",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "そこ",
+      "reading": "那里",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "あそこ",
+      "reading": "那里",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "どこ",
+      "reading": "哪里",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "教室",
+      "reading": "きょうしつ",
+      "meaning": "教室",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "食堂",
+      "reading": "しょくどう",
+      "meaning": "餐厅，食堂",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "事務所",
+      "reading": "じむしょ",
+      "meaning": "办公室",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "部屋",
+      "reading": "へや",
+      "meaning": "房间",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "トイレ",
+      "reading": "厕所",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "階段",
+      "reading": "かいだん",
+      "meaning": "楼梯",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "エレベーター",
+      "reading": "电梯",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "会社",
+      "reading": "かいしゃ",
+      "meaning": "公司",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "電話",
+      "reading": "てんわ",
+      "meaning": "电话",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "靴",
+      "reading": "くつ",
+      "meaning": "鞋子",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "いくら",
+      "reading": "多少钱",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "百",
+      "reading": "ひゃく",
+      "meaning": "百",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "千",
+      "reading": "せん",
+      "meaning": "千",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "万",
+      "reading": "まん",
+      "meaning": "万",
+      "partOfSpeech": "",
+      "lesson": "第03课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "起きます",
+      "reading": "起床，起来",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "寝ます",
+      "reading": "睡觉，就寝",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "働きます",
+      "reading": "工作",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "休みます",
+      "reading": "休息",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "勉強します",
+      "reading": "念书，用功",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "終わります",
+      "reading": "结束",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "デパート",
+      "reading": "百货公司",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "銀行",
+      "reading": "ぎんこう",
+      "meaning": "银行",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "郵便局",
+      "reading": "ゆうびんきょく",
+      "meaning": "邮局",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "図書館",
+      "reading": "としょかん",
+      "meaning": "图书馆",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "今",
+      "reading": "いま",
+      "meaning": "现在",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "何時",
+      "reading": "几点",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "午前",
+      "reading": "ごぜん",
+      "meaning": "上午",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "午後",
+      "reading": "ごご",
+      "meaning": "下午",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "朝",
+      "reading": "あさ",
+      "meaning": "早上",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "昼",
+      "reading": "ひる",
+      "meaning": "白天，中午",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "晩",
+      "reading": "晚上，夜晚",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "きのう",
+      "reading": "昨天",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "きょう",
+      "reading": "今天",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "あした",
+      "reading": "明天",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "休み",
+      "reading": "休息，休假",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "月曜日",
+      "reading": "星期一",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "火曜日",
+      "reading": "星期二",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "水曜日",
+      "reading": "星期三",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "木曜日",
+      "reading": "星期四",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "金曜日",
+      "reading": "星期五",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "土曜日",
+      "reading": "星期六",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "日曜日",
+      "reading": "星期天",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第04课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "行きます",
+      "reading": "去",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "来ます",
+      "reading": "来",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "帰ります",
+      "reading": "回家",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "学校",
+      "reading": "がっこう",
+      "meaning": "学校",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "駅",
+      "reading": "えき",
+      "meaning": "车站",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "電車",
+      "reading": "でんしゃ",
+      "meaning": "电车",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "バス",
+      "reading": "公车",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "タクシー",
+      "reading": "计程车",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "自転車",
+      "reading": "じてんしゃ",
+      "meaning": "自行车",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "人",
+      "reading": "ひと",
+      "meaning": "人",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "友達",
+      "reading": "ともだち",
+      "meaning": "朋友",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "家族",
+      "reading": "かぞく",
+      "meaning": "家人",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "先週",
+      "reading": "上周",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "今週",
+      "reading": "本周",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "来週",
+      "reading": "下周",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "先月",
+      "reading": "上个月",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "今月",
+      "reading": "这个月",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "来月",
+      "reading": "下个月",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "去年",
+      "reading": "去年",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ことし",
+      "reading": "今年",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "来年",
+      "reading": "明年",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第05课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "食べます",
+      "reading": "吃",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "飲みます",
+      "reading": "喝",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "見ます",
+      "reading": "看",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "聞きます",
+      "reading": "听",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "読みます",
+      "reading": "阅读",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "書きます",
+      "reading": "书写",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "買います",
+      "reading": "购买",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "します",
+      "reading": "做",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ごはん",
+      "reading": "餐，米饭",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "朝ごはん",
+      "reading": "早餐",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "昼ごはん",
+      "reading": "中餐",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "晩ごはん",
+      "reading": "晚餐",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "パン",
+      "reading": "面包",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "卵",
+      "reading": "たまご",
+      "meaning": "鸡蛋",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "肉",
+      "reading": "にく",
+      "meaning": "肉",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "魚",
+      "reading": "さかな",
+      "meaning": "鱼",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "野菜",
+      "reading": "やさい",
+      "meaning": "蔬菜",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "水",
+      "reading": "みず",
+      "meaning": "水",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "お茶",
+      "reading": "おちゃ",
+      "meaning": "茶",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "牛乳",
+      "reading": "ぎゅうにゅう",
+      "meaning": "牛奶",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ジュース",
+      "reading": "果汁",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ビール",
+      "reading": "啤酒",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "映画",
+      "reading": "えいが",
+      "meaning": "电影",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "写真",
+      "reading": "しゃしん",
+      "meaning": "相片",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "店",
+      "reading": "みせ",
+      "meaning": "商店",
+      "partOfSpeech": "",
+      "lesson": "第06课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "切ります",
+      "reading": "剪，切",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "送ります",
+      "reading": "寄送",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "あげます",
+      "reading": "给，送",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "もらいます",
+      "reading": "接受，得到",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "借ります",
+      "reading": "借入",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "教えます",
+      "reading": "教",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "習います",
+      "reading": "学习",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "手",
+      "reading": "て",
+      "meaning": "手",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "はし",
+      "reading": "筷子",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "紙",
+      "reading": "かみ",
+      "meaning": "纸",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "花",
+      "reading": "はな",
+      "meaning": "花",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "シャツ",
+      "reading": "衬衫",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "荷物",
+      "reading": "にもつ",
+      "meaning": "行李",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "お金",
+      "reading": "おかね",
+      "meaning": "钱",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "切符",
+      "reading": "きップ",
+      "meaning": "票",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "父",
+      "reading": "ちち",
+      "meaning": "家父",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "母",
+      "reading": "はは",
+      "meaning": "家母",
+      "partOfSpeech": "",
+      "lesson": "第07课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ハンサム",
+      "reading": "英俊",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "きれい",
+      "reading": "美丽，干净",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "静か",
+      "reading": "安静",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "にぎやか",
+      "reading": "热闹",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "有名",
+      "reading": "ゆうめい",
+      "meaning": "有名",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "親切",
+      "reading": "しんせつ",
+      "meaning": "亲切",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "元気",
+      "reading": "げんき",
+      "meaning": "身体好",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "暇",
+      "reading": "ひま",
+      "meaning": "空闲",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "便利",
+      "reading": "べんり",
+      "meaning": "方便",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "大きい",
+      "reading": "おおきい",
+      "meaning": "大",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "小さい",
+      "reading": "ちいさい",
+      "meaning": "小",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "新しい",
+      "reading": "あたらしい",
+      "meaning": "新",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "古い",
+      "reading": "ふるい",
+      "meaning": "旧",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "いい",
+      "reading": "好",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "悪い",
+      "reading": "わるい",
+      "meaning": "坏",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "暑い",
+      "reading": "あつい",
+      "meaning": "热",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "寒い",
+      "reading": "さむい",
+      "meaning": "寒冷",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "難しい",
+      "reading": "むずかしい",
+      "meaning": "难",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "易しい",
+      "reading": "やさしい",
+      "meaning": "简单",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "高い",
+      "reading": "たかい",
+      "meaning": "高，贵",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "安い",
+      "reading": "やすい",
+      "meaning": "便宜",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "山",
+      "reading": "やま",
+      "meaning": "山",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "町",
+      "reading": "まち",
+      "meaning": "城市，城镇",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "食べ物",
+      "reading": "たべもの",
+      "meaning": "食物",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "車",
+      "reading": "くるま",
+      "meaning": "汽车",
+      "partOfSpeech": "",
+      "lesson": "第08课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "わかります",
+      "reading": "了解，明白",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "あります",
+      "reading": "有",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "好き",
+      "reading": "喜欢",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "嫌い",
+      "reading": "讨厌",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "上手",
+      "reading": "じょうず",
+      "meaning": "好，高明",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "下手",
+      "reading": "へた",
+      "meaning": "不行，笨拙",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "料理",
+      "reading": "りょうり",
+      "meaning": "料理",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "飲み物",
+      "reading": "のみもの",
+      "meaning": "饮料",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "スポーツ",
+      "reading": "运动",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "野球",
+      "reading": "やきゅう",
+      "meaning": "棒球",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "音楽",
+      "reading": "おんがく",
+      "meaning": "音乐",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "歌",
+      "reading": "うた",
+      "meaning": "歌曲，歌",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "クラシック",
+      "reading": "古典音乐",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "コンサート",
+      "reading": "音乐会",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "時間",
+      "reading": "じかん",
+      "meaning": "时间",
+      "partOfSpeech": "",
+      "lesson": "第09课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "います",
+      "reading": "有（生物存在）",
+      "meaning": "名词",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "あります",
+      "reading": "有（无生物存在）",
+      "meaning": "名词",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "犬",
+      "reading": "いぬ",
+      "meaning": "狗",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "猫",
+      "reading": "ねこ",
+      "meaning": "猫",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "木",
+      "reading": "き",
+      "meaning": "树",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "冰箱",
+      "reading": "れいぞうこ",
+      "meaning": "冰箱",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "テーブル",
+      "reading": "餐桌",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ベッド",
+      "reading": "床",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "棚",
+      "reading": "たな",
+      "meaning": "架子",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ドア",
+      "reading": "门",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "窓",
+      "reading": "まど",
+      "meaning": "窗户",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ポスト",
+      "reading": "邮筒，信箱",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ビル",
+      "reading": "大厦，大楼",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "公園",
+      "reading": "こうえん",
+      "meaning": "公园",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "本屋",
+      "reading": "ほんや",
+      "meaning": "书店",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "上",
+      "reading": "うえ",
+      "meaning": "上，上面",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "下",
+      "reading": "した",
+      "meaning": "下，下面",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "前",
+      "reading": "まえ",
+      "meaning": "前，前面",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "うしろ",
+      "reading": "后，后面",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "右",
+      "reading": "みぎ",
+      "meaning": "右（边）",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "左",
+      "reading": "ひだり",
+      "meaning": "左（边）",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "中",
+      "reading": "なか",
+      "meaning": "里面，中间",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "外",
+      "reading": "そと",
+      "meaning": "外面",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "隣",
+      "reading": "となり",
+      "meaning": "隔壁，旁边",
+      "partOfSpeech": "",
+      "lesson": "第10课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "かかります",
+      "reading": "花费",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "1つ",
+      "reading": "ひとつ",
+      "meaning": "一个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "2つ",
+      "reading": "ふたつ",
+      "meaning": "二个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "3つ",
+      "reading": "みっつ",
+      "meaning": "三个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "4つ",
+      "reading": "よっつ",
+      "meaning": "四个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "5つ",
+      "reading": "いつつ",
+      "meaning": "五个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "6つ",
+      "reading": "むっつ",
+      "meaning": "六个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "7つ",
+      "reading": "ななつ",
+      "meaning": "七个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "8つ",
+      "reading": "やっつ",
+      "meaning": "八个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "9つ",
+      "reading": "ここのつ",
+      "meaning": "九个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "10つ",
+      "reading": "とお",
+      "meaning": "十个",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ひとり",
+      "reading": "一个人",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ふたり",
+      "reading": "二个人",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "りんご",
+      "reading": "苹果",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "みかん",
+      "reading": "桔子",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "切手",
+      "reading": "きって",
+      "meaning": "邮票",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "はがき",
+      "reading": "明信片",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "封筒",
+      "reading": "ふうとう",
+      "meaning": "信封",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "両親",
+      "reading": "りょうしん",
+      "meaning": "双亲",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "兄弟",
+      "reading": "きょうだい",
+      "meaning": "兄弟姐妹",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "兄",
+      "reading": "あに",
+      "meaning": "（我）哥哥",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "姉",
+      "reading": "あね",
+      "meaning": "（我）姐姐",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "弟",
+      "reading": "おとうと",
+      "meaning": "（我）弟弟",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "妹",
+      "reading": "いもうと",
+      "meaning": "（我）妹妹",
+      "partOfSpeech": "",
+      "lesson": "第11课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "簡単",
+      "reading": "かんたん",
+      "meaning": "简单",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "近い",
+      "reading": "ちかい",
+      "meaning": "近",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "遠い",
+      "reading": "とおい",
+      "meaning": "远",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "速い",
+      "reading": "はやい",
+      "meaning": "快，早",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "遅い",
+      "reading": "おそい",
+      "meaning": "慢，晚",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "多い",
+      "reading": "おおい",
+      "meaning": "多",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "少ない",
+      "reading": "すくない",
+      "meaning": "少",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "春",
+      "reading": "はる",
+      "meaning": "春",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "夏",
+      "reading": "なつ",
+      "meaning": "夏",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "秋",
+      "reading": "あき",
+      "meaning": "秋",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "冬",
+      "reading": "ふゆ",
+      "meaning": "冬",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "天気",
+      "reading": "てんき",
+      "meaning": "天气",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "雨",
+      "reading": "あめ",
+      "meaning": "雨，下雨",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "雪",
+      "reading": "ゆき",
+      "meaning": "雪，下雪",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "曇り",
+      "reading": "くもり",
+      "meaning": "阴天",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ホテル",
+      "reading": "饭店，旅馆",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "空港",
+      "reading": "くうこう",
+      "meaning": "机场",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "海",
+      "reading": "うみ",
+      "meaning": "海",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "世界",
+      "reading": "せかい",
+      "meaning": "世界",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "試験",
+      "reading": "しけん",
+      "meaning": "考试",
+      "partOfSpeech": "",
+      "lesson": "第12课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "遊びます",
+      "reading": "玩，游乐",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "泳ぎます",
+      "reading": "游泳",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "疲れます",
+      "reading": "疲累",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "出します",
+      "reading": "寄（信）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "大変",
+      "reading": "たいへん",
+      "meaning": "重大",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "欲しい",
+      "reading": "ほしい",
+      "meaning": "想要",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "寂しい",
+      "reading": "さびしい",
+      "meaning": "孤独，寂寞",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "広い",
+      "reading": "ひろい",
+      "meaning": "宽广，广阔",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "プール",
+      "reading": "游泳池",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "川",
+      "reading": "かわ",
+      "meaning": "河川",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "会議",
+      "reading": "かいぎ",
+      "meaning": "会议",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "週末",
+      "reading": "しゅうまつ",
+      "meaning": "周末",
+      "partOfSpeech": "",
+      "lesson": "第13课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "つけます",
+      "reading": "打开",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "消します",
+      "reading": "关掉",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "開けます",
+      "reading": "打开",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "閉めます",
+      "reading": "关闭",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "急ぎます",
+      "reading": "着急",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "待ちます",
+      "reading": "等",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "止めます",
+      "reading": "停止",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "曲がります",
+      "reading": "转向",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "持ちます",
+      "reading": "持有，携带",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "取ります",
+      "reading": "拿",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "呼びます",
+      "reading": "呼叫",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "話します",
+      "reading": "讲，说",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "見せます",
+      "reading": "出示",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "教えます",
+      "reading": "告诉",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "始めます",
+      "reading": "开始",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "エアコン",
+      "reading": "空调机",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "パスポート",
+      "reading": "护照",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "名前",
+      "reading": "なまえ",
+      "meaning": "名字，姓名",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "住所",
+      "reading": "じゅうしょ",
+      "meaning": "地址，住所",
+      "partOfSpeech": "",
+      "lesson": "第14课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "立ちます",
+      "reading": "站，立",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "座ります",
+      "reading": "坐",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "使います",
+      "reading": "使用，用",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "置きます",
+      "reading": "放置，摆放",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "作ります",
+      "reading": "做，制造",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "売ります",
+      "reading": "卖，销售",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "知ります",
+      "reading": "得知",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "住みます",
+      "reading": "居住",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "研究します",
+      "reading": "研究",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "知っています",
+      "reading": "知道",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "住んでいます",
+      "reading": "居住",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "資料",
+      "reading": "しりょう",
+      "meaning": "资料",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "服",
+      "reading": "ふく",
+      "meaning": "衣服",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "製品",
+      "reading": "せいひん",
+      "meaning": "产品",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "専門",
+      "reading": "せんもん",
+      "meaning": "专业，专长",
+      "partOfSpeech": "",
+      "lesson": "第15课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "乗ります",
+      "reading": "搭乘",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "降ります",
+      "reading": "下（车）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "若い",
+      "reading": "わかい",
+      "meaning": "年轻",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "長い",
+      "reading": "ながい",
+      "meaning": "长",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "短い",
+      "reading": "みじかい",
+      "meaning": "短",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "明るい",
+      "reading": "あかるい",
+      "meaning": "明亮",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "暗い",
+      "reading": "くらい",
+      "meaning": "昏暗，黑暗",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "体",
+      "reading": "からだ",
+      "meaning": "身体",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "頭",
+      "reading": "あたま",
+      "meaning": "头",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "髪",
+      "reading": "かみ",
+      "meaning": "头发",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "顔",
+      "reading": "かお",
+      "meaning": "脸",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "目",
+      "reading": "め",
+      "meaning": "眼睛",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "耳",
+      "reading": "みみ",
+      "meaning": "耳朵",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "口",
+      "reading": "くち",
+      "meaning": "嘴巴",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "足",
+      "reading": "あし",
+      "meaning": "脚，腿",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "サービス",
+      "reading": "服务",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ジョギング",
+      "reading": "慢跑",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "シャワー",
+      "reading": "淋浴",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第16课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "覚えます",
+      "reading": "记住",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "忘れます",
+      "reading": "忘记",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "なくします",
+      "reading": "遗失",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "出します",
+      "reading": "提交",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "払います",
+      "reading": "支付，付款",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "返します",
+      "reading": "归还，还",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "出家ます",
+      "reading": "出门，外出",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "脱ぎます",
+      "reading": "脱（衣服等）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "持っていきます",
+      "reading": "带去",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "もって来ます",
+      "reading": "带来",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "心配します",
+      "reading": "担心",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "残業します",
+      "reading": "加班",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "出張します",
+      "reading": "出差",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "大切",
+      "reading": "たいせつ",
+      "meaning": "重要",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "大丈夫",
+      "reading": "だいじょうぶ",
+      "meaning": "放心，没关系",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "危ない",
+      "reading": "あぶない",
+      "meaning": "危险",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "問題",
+      "reading": "もんだい",
+      "meaning": "问题",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "かぜ",
+      "reading": "感冒",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "熱",
+      "reading": "ねつ",
+      "meaning": "发烧",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "病気",
+      "reading": "びょうき",
+      "meaning": "病，生病",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "薬",
+      "reading": "くすり",
+      "meaning": "药",
+      "partOfSpeech": "",
+      "lesson": "第17课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "できます",
+      "reading": "会，能够，可以",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "洗います",
+      "reading": "洗",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "弾きます",
+      "reading": "弹（钢琴等）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "歌います",
+      "reading": "唱",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "集めます",
+      "reading": "收集",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "捨てます",
+      "reading": "丢掉，舍弃",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "換えます",
+      "reading": "交换，变换",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "運転します",
+      "reading": "驾驶",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "予約します",
+      "reading": "预约",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ピアノ",
+      "reading": "钢琴",
+      "meaning": "0",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "現金",
+      "reading": "げんきん",
+      "meaning": "现金",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "趣味",
+      "reading": "しゅみ",
+      "meaning": "爱好，嗜好",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "日記",
+      "reading": "にっき",
+      "meaning": "日记",
+      "partOfSpeech": "",
+      "lesson": "第18课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "登ります",
+      "reading": "登，爬",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "泊まります",
+      "reading": "住（饭店）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "掃除します",
+      "reading": "打扫",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "洗濯します",
+      "reading": "洗衣服",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "練習します",
+      "reading": "练习",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "になります",
+      "reading": "成为",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "眠い",
+      "reading": "ねむい",
+      "meaning": "想睡，困",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "強い",
+      "reading": "つよい",
+      "meaning": "强",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "弱い",
+      "reading": "よわ",
+      "meaning": "弱",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "Golf",
+      "reading": "高尔夫球",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "相撲",
+      "reading": "すもう",
+      "meaning": "相扑",
+      "partOfSpeech": "",
+      "lesson": "第19课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "要ります",
+      "reading": "要，需要",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第20课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "調べます",
+      "reading": "调查",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第20课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "直します",
+      "reading": "修理，改正",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第20课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "修理します",
+      "reading": "修理",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第20课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "電話します",
+      "reading": "打电话",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第20课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "僕",
+      "reading": "ぼく",
+      "meaning": "我（男性用语）",
+      "partOfSpeech": "",
+      "lesson": "第20课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "君",
+      "reading": "きみ",
+      "meaning": "你（男性对晚辈用）",
+      "partOfSpeech": "",
+      "lesson": "第20课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "サラリーマン",
+      "reading": "薪水阶级，上班族",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第20课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ことば",
+      "reading": "单字，语言",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第20课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "思います",
+      "reading": "想，认为，觉得",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "言います",
+      "reading": "说",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "足ります",
+      "reading": "足够",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "勝ちます",
+      "reading": "赢，得胜",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "負けます",
+      "reading": "输，落败",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "役に立ちます",
+      "reading": "有用，起作用",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "不便",
+      "reading": "ふべん",
+      "meaning": "不便",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "同じ",
+      "reading": "おなじ",
+      "meaning": "相同，一样",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "すごい",
+      "reading": "厉害",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "ニュース",
+      "reading": "新闻",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "試合",
+      "reading": "しあい",
+      "meaning": "比赛",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "アルバイト",
+      "reading": "打工",
+      "meaning": "3",
+      "partOfSpeech": "",
+      "lesson": "第21课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "着ます",
+      "reading": "穿（衬衫等）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第22课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "はきます",
+      "reading": "穿（鞋，裤子）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第22课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "かぶります",
+      "reading": "戴（帽子等）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第22课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "かけます",
+      "reading": "戴（眼镜）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第22课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "生まれます",
+      "reading": "出生",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第22课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "コート",
+      "reading": "大衣，外套",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第22课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "セーター",
+      "reading": "毛衣",
+      "meaning": "1",
+      "partOfSpeech": "",
+      "lesson": "第22课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "帽子",
+      "reading": "ぼうし",
+      "meaning": "帽子",
+      "partOfSpeech": "",
+      "lesson": "第22课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "聞きます",
+      "reading": "问",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "回します",
+      "reading": "转动",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "引きます",
+      "reading": "拉",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "変えます",
+      "reading": "改变，换",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "触ります",
+      "reading": "摸，碰触",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "動きます",
+      "reading": "（钟表）转动",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "歩きます",
+      "reading": "走（路）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "渡ります",
+      "reading": "过（桥）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "気をつけます",
+      "reading": "小心，注意",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "引っ越しします",
+      "reading": "搬家",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "機械",
+      "reading": "きかい",
+      "meaning": "机械，机器",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "故障",
+      "reading": "こしょう",
+      "meaning": "故障",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "道",
+      "reading": "みち",
+      "meaning": "道路",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "交差点",
+      "reading": "こうさてn",
+      "meaning": "十字路口",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "信号",
+      "reading": "しんごう",
+      "meaning": "红绿灯",
+      "partOfSpeech": "",
+      "lesson": "第23课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "くれます",
+      "reading": "给（我）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "連れて行きます",
+      "reading": "带（某人）去",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "連れて来ます",
+      "reading": "带（某人）来",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "送ります",
+      "reading": "送（人）",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "紹介します",
+      "reading": "介绍",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "案内します",
+      "reading": "带路，引路",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "説明します",
+      "reading": "说明",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "おじいさん",
+      "reading": "祖父，老爷爷",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "おばあさん",
+      "reading": "祖母，老奶奶",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "準備",
+      "reading": "じゅんび",
+      "meaning": "准备",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "意味",
+      "reading": "いみ",
+      "meaning": "意思",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "全部",
+      "reading": "ぜんぶ",
+      "meaning": "全部",
+      "partOfSpeech": "",
+      "lesson": "第24课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "考えます",
+      "reading": "思考，想",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第25课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "着きます",
+      "reading": "到达，抵达",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第25课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "留学します",
+      "reading": "留学",
+      "meaning": "动词",
+      "partOfSpeech": "",
+      "lesson": "第25课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "田舎",
+      "reading": "いなか",
+      "meaning": "乡下，故乡",
+      "partOfSpeech": "",
+      "lesson": "第25课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "大使館",
+      "reading": "たいしかん",
+      "meaning": "大使馆",
+      "partOfSpeech": "",
+      "lesson": "第25课",
+      "sheet": "大家的日本语第一册"
+    },
+    {
+      "word": "グループ",
+      "reading": "组，群",
+      "meaning": "2",
+      "partOfSpeech": "",
+      "lesson": "第25课",
+      "sheet": "大家的日本语第一册"
+    }
+  ]
+}

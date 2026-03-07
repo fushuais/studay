@@ -16,23 +16,38 @@ struct VocabularyWord: Identifiable, Codable {
     let meaning: String
     let japaneseExample: String
     let englishExample: String
+    let chineseExample: String
     let lesson: String  // 课程编号，如 "第1课"
     let level: String   // 级别，如 "大家的日本语", "N3", "N2", "N1"
     
-    init(word: String, pronunciation: String, meaning: String, japaneseExample: String, englishExample: String, lesson: String, level: String) {
+    init(word: String, pronunciation: String, meaning: String, japaneseExample: String, englishExample: String, chineseExample: String, lesson: String, level: String) {
         self.id = UUID()
         self.word = word
         self.pronunciation = pronunciation
         self.meaning = meaning
         self.japaneseExample = japaneseExample
         self.englishExample = englishExample
+        self.chineseExample = chineseExample
         self.lesson = lesson
         self.level = level
+    }
+    
+    init(from appWord: AppVocabularyWord) {
+        self.id = appWord.id
+        self.word = appWord.word
+        self.pronunciation = appWord.reading
+        self.meaning = appWord.meaning
+        self.japaneseExample = appWord.japaneseExample
+        self.englishExample = appWord.englishExample
+        self.chineseExample = appWord.chineseExample
+        self.lesson = appWord.lesson
+        self.level = appWord.level
     }
 }
 
 // 学习级别
 enum VocabularyLevel: String, CaseIterable {
+    case primary = "标准日本语初级上册"
     case minnaNoNihongo = "大家的日本语"
     case n3 = "N3"
     case n2 = "N2"
@@ -40,6 +55,7 @@ enum VocabularyLevel: String, CaseIterable {
     
     var icon: String {
         switch self {
+        case .primary: return "graduationcap.fill"
         case .minnaNoNihongo: return "book.fill"
         case .n3: return "star.fill"
         case .n2: return "star.circle.fill"
@@ -49,6 +65,7 @@ enum VocabularyLevel: String, CaseIterable {
     
     var color: Color {
         switch self {
+        case .primary: return .green
         case .minnaNoNihongo: return .orange
         case .n3: return .blue
         case .n2: return .purple
@@ -58,6 +75,7 @@ enum VocabularyLevel: String, CaseIterable {
     
     var description: String {
         switch self {
+        case .primary: return "基础词汇 第1-24课"
         case .minnaNoNihongo: return "基础词汇 1-50课"
         case .n3: return "中级词汇"
         case .n2: return "中高级词汇"
@@ -67,7 +85,8 @@ enum VocabularyLevel: String, CaseIterable {
     
     var requirement: String {
         switch self {
-        case .minnaNoNihongo: return "开始学习"
+        case .primary: return "开始学习"
+        case .minnaNoNihongo: return "初级上册通过率60%"
         case .n3: return "大家的日本语通过率60%"
         case .n2: return "N3通过率60%"
         case .n1: return "N2通过率60%"
@@ -122,25 +141,17 @@ class LearningProgress: ObservableObject {
         saveData()
     }
     
-    func getPassRate(for level: String, allWords: [VocabularyWord]) -> Double {
+    func getPassRate(for level: String, allWords: [AppVocabularyWord]) -> Double {
         let levelWords = allWords.filter { $0.level == level }
         guard !levelWords.isEmpty else { return 0 }
         
         let mastered = levelWords.filter { masteredWords.contains($0.id) }.count
-        return Double(mastered) / Double(levelWords.count)
+        return Double(mastered) / Double(max(levelWords.count, 1))
     }
     
-    func isLevelUnlocked(_ level: VocabularyLevel, allWords: [VocabularyWord]) -> Bool {
-        switch level {
-        case .minnaNoNihongo:
-            return true
-        case .n3:
-            return getPassRate(for: "大家的日本语", allWords: allWords) >= 0.6
-        case .n2:
-            return getPassRate(for: "N3", allWords: allWords) >= 0.6
-        case .n1:
-            return getPassRate(for: "N2", allWords: allWords) >= 0.6
-        }
+    func isLevelUnlocked(_ level: VocabularyLevel, allWords: [AppVocabularyWord]) -> Bool {
+        // 现在所有级别默认解锁，无需通过率限制
+        return true
     }
     
     func reset() {
@@ -154,9 +165,12 @@ class LearningProgress: ObservableObject {
 
 struct VocabularyView: View {
     @StateObject private var progress = LearningProgress.shared
+    @StateObject private var dataManager = VocabularyDataManager.shared
     @State private var showResetAlert = false
     
-    let allWords = VocabularyData.allWords
+    var allWords: [AppVocabularyWord] {
+        dataManager.allWords
+    }
     
     var body: some View {
         NavigationStack {
@@ -172,7 +186,7 @@ struct VocabularyView: View {
                             .font(.largeTitle)
                             .fontWeight(.bold)
                         
-                        Text("分级学习 · 通过率60%解锁下一级")
+                        Text("分级学习 · 所有级别均可自由学习")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
@@ -227,7 +241,7 @@ struct VocabularyView: View {
 // 学习进度总览卡片
 struct ProgressOverviewCard: View {
     @ObservedObject var progress: LearningProgress
-    let allWords: [VocabularyWord]
+    let allWords: [AppVocabularyWord]
     
     var body: some View {
         VStack(spacing: 12) {
@@ -241,7 +255,7 @@ struct ProgressOverviewCard: View {
                 }
                 Spacer()
                 VStack(alignment: .trailing, spacing: 4) {
-                    Text("\(Int(Double(allWords.filter { progress.masteredWords.contains($0.id) }.count) / Double(allWords.count) * 100))%")
+                    Text("\(Int(Double(allWords.filter { progress.masteredWords.contains($0.id) }.count) / Double(max(allWords.count, 1)) * 100))%")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(.orange)
@@ -352,26 +366,39 @@ struct LessonSelectionView: View {
     let isUnlocked: Bool
     
     @StateObject private var progress = LearningProgress.shared
+    @StateObject private var dataManager = VocabularyDataManager.shared
     
     var lessons: [String] {
-        if level == .minnaNoNihongo {
-            return (1...50).map { "第\($0)课" }
-        } else {
-            return [level.rawValue]
+        // 对于「标准日本语初级上册」和「大家的日本语」，按实际数据中的 lesson 分课展示
+        if level == .primary || level == .minnaNoNihongo {
+            let levelWords = dataManager.allWords.filter { $0.level == level.rawValue }
+            let lessonSet = Set(levelWords.map { $0.lesson })
+            return lessonSet.sorted { lhs, rhs in
+                lessonIndex(from: lhs) < lessonIndex(from: rhs)
+            }
         }
+        // 其他级别（N3/N2/N1）仍然按整级别作为一个单元
+        return [level.rawValue]
+    }
+    
+    /// 从类似「第1课」「第10课」的字符串中提取课号，用于排序
+    private func lessonIndex(from lesson: String) -> Int {
+        let digits = lesson.compactMap { $0.wholeNumberValue }
+        if digits.isEmpty { return 0 }
+        return Int(digits.map(String.init).joined()) ?? 0
     }
     
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                if level == .minnaNoNihongo {
+                if level == .primary || level == .minnaNoNihongo {
                     ForEach(lessons, id: \.self) { lesson in
                         NavigationLink(destination: VocabularyCardView(
                             level: level,
                             lesson: lesson,
-                            words: VocabularyData.allWords.filter { $0.lesson == lesson }
+                            words: dataManager.allWords.filter { $0.level == level.rawValue && $0.lesson == lesson }
                         )) {
-                            LessonRow(lesson: lesson, progress: progress)
+                            LessonRow(lesson: lesson, level: level, progress: progress, dataManager: dataManager)
                         }
                         .buttonStyle(.plain)
                     }
@@ -379,7 +406,7 @@ struct LessonSelectionView: View {
                     NavigationLink(destination: VocabularyCardView(
                         level: level,
                         lesson: level.rawValue,
-                        words: VocabularyData.allWords.filter { $0.level == level.rawValue }
+                        words: dataManager.allWords.filter { $0.level == level.rawValue }
                     )) {
                         HStack {
                             VStack(alignment: .leading, spacing: 8) {
@@ -387,13 +414,14 @@ struct LessonSelectionView: View {
                                     .font(.title2)
                                     .fontWeight(.bold)
                                 
-                                Text("\(VocabularyData.allWords.filter { $0.level == level.rawValue }.count) 个单词")
+                                Text("\(dataManager.allWords.filter { $0.level == level.rawValue }.count) 个单词")
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                                 
-                                Text("通过率: \(Int(progress.getPassRate(for: level.rawValue, allWords: VocabularyData.allWords) * 100))%")
+                                let passRate = progress.getPassRate(for: level.rawValue, allWords: dataManager.allWords)
+                                Text("通过率: \(Int(passRate * 100))%")
                                     .font(.caption)
-                                    .foregroundColor(progress.getPassRate(for: level.rawValue, allWords: VocabularyData.allWords) >= 0.6 ? .green : .orange)
+                                    .foregroundColor(passRate >= 0.6 ? .green : .orange)
                             }
                             
                             Spacer()
@@ -418,7 +446,9 @@ struct LessonSelectionView: View {
 
 struct LessonRow: View {
     let lesson: String
+    let level: VocabularyLevel
     @ObservedObject var progress: LearningProgress
+    @ObservedObject var dataManager: VocabularyDataManager
     
     var body: some View {
         HStack {
@@ -427,7 +457,7 @@ struct LessonRow: View {
                     .font(.headline)
                     .foregroundColor(.primary)
                 
-                let words = VocabularyData.allWords.filter { $0.lesson == lesson }
+                let words = dataManager.allWords.filter { $0.level == level.rawValue && $0.lesson == lesson }
                 let mastered = words.filter { progress.masteredWords.contains($0.id) }.count
                 let rate = words.isEmpty ? 0 : Double(mastered) / Double(words.count)
                 
@@ -460,23 +490,30 @@ struct LessonRow: View {
 struct VocabularyCardView: View {
     let level: VocabularyLevel
     let lesson: String
-    let words: [VocabularyWord]
+    let words: [AppVocabularyWord]
     
     @StateObject private var progress = LearningProgress.shared
     @State private var currentIndex = 0
     @State private var offset = CGSize.zero
     @State private var showExample = false
     
-    var remainingWords: [VocabularyWord] {
-        Array(words[currentIndex...])
-    }
-    
     var body: some View {
         ZStack {
             Color(.systemGroupedBackground)
                 .ignoresSafeArea()
             
-            if currentIndex < words.count {
+            if words.isEmpty {
+                VStack(spacing: 16) {
+                    Text("本课暂无单词")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.secondary)
+                    Text("请返回上一页选择有单词的课程。")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .padding()
+            } else if currentIndex < words.count {
                 VStack(spacing: 20) {
                     // 进度条
                     ProgressView(value: Double(currentIndex), total: Double(words.count))
@@ -486,42 +523,33 @@ struct VocabularyCardView: View {
                         .font(.caption)
                         .foregroundColor(.secondary)
                     
-                    // 卡片堆叠
-                    ZStack {
-                        ForEach(Array(remainingWords.enumerated()), id: \.element.id) { index, word in
-                            CardView(
-                                word: word,
-                                showExample: showExample && index == 0,
-                                onTap: {
-                                    withAnimation {
-                                        showExample.toggle()
+                    // 单张卡片（当前单词）
+                    CardView(
+                        word: words[currentIndex],
+                        showExample: showExample,
+                        onTap: {
+                            withAnimation {
+                                showExample.toggle()
+                            }
+                        }
+                    )
+                    .offset(x: offset.width)
+                    .rotationEffect(.degrees(Double(offset.width) / 20))
+                    .gesture(
+                        DragGesture()
+                            .onChanged { gesture in
+                                offset = gesture.translation
+                            }
+                            .onEnded { _ in
+                                withAnimation {
+                                    if abs(offset.width) > 100 {
+                                        offset.width > 0 ? swipeRight() : swipeLeft()
+                                    } else {
+                                        offset = .zero
                                     }
                                 }
-                            )
-                            .offset(x: index == 0 ? offset.width : 0)
-                            .rotationEffect(.degrees(Double(offset.width) / 20))
-                            .gesture(
-                                DragGesture()
-                                    .onChanged { gesture in
-                                        if index == 0 {
-                                            offset = gesture.translation
-                                        }
-                                    }
-                                    .onEnded { gesture in
-                                        if index == 0 {
-                                            withAnimation {
-                                                if abs(offset.width) > 100 {
-                                                    offset.width > 0 ? swipeRight() : swipeLeft()
-                                                } else {
-                                                    offset = .zero
-                                                }
-                                            }
-                                        }
-                                    }
-                            )
-                        }
-                    }
-                    .frame(height: 500)
+                            }
+                    )
                     
                     // 操作按钮
                     HStack(spacing: 80) {
@@ -603,7 +631,7 @@ struct VocabularyCardView: View {
 // MARK: - 单词卡片
 
 struct CardView: View {
-    let word: VocabularyWord
+    let word: AppVocabularyWord
     let showExample: Bool
     let onTap: () -> Void
     
@@ -615,7 +643,7 @@ struct CardView: View {
                     .font(.system(size: 48, weight: .bold))
                     .foregroundColor(.orange)
                 
-                Text(word.pronunciation)
+                Text(word.reading)
                     .font(.title3)
                     .foregroundColor(.secondary)
                 
@@ -649,7 +677,23 @@ struct CardView: View {
                         HStack {
                             Image(systemName: "a.circle")
                                 .foregroundColor(.green)
-                            Text("英文例句")
+                            Text("中文翻译")
+                                .font(.headline)
+                                .foregroundColor(.secondary)
+                        }
+                        Text(word.chineseExample)
+                            .font(.body)
+                            .foregroundColor(.primary)
+                    }
+                    .padding()
+                    .background(Color.green.opacity(0.1))
+                    .cornerRadius(12)
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Image(systemName: "textformat.abc")
+                                .foregroundColor(.blue)
+                            Text("英文翻译")
                                 .font(.headline)
                                 .foregroundColor(.secondary)
                         }
@@ -658,7 +702,7 @@ struct CardView: View {
                             .foregroundColor(.primary)
                     }
                     .padding()
-                    .background(Color.green.opacity(0.1))
+                    .background(Color.blue.opacity(0.1))
                     .cornerRadius(12)
                 }
                 .transition(.opacity)
@@ -673,7 +717,7 @@ struct CardView: View {
                 .padding(.bottom, 20)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 500)
+        .frame(height: 580)
         .background(Color(.systemBackground))
         .cornerRadius(20)
         .shadow(color: Color.black.opacity(0.15), radius: 20, x: 0, y: 10)
@@ -692,7 +736,7 @@ struct CompletionView: View {
     let onRestart: () -> Void
     
     var passRate: Double {
-        Double(masteredCount) / Double(totalWords)
+        Double(masteredCount) / Double(max(totalWords, 1))
     }
     
     var body: some View {
@@ -740,135 +784,7 @@ struct CompletionView: View {
     }
 }
 
-// MARK: - 词汇数据
 
-struct VocabularyData {
-    static let allWords: [VocabularyWord] = {
-        var words: [VocabularyWord] = []
-        
-        // 大家的日本语 1-50课示例词汇
-        let minnaWords = [
-            // 第1课
-            ("私", "わたし", "我", "私は学生です。", "I am a student.", "第1课"),
-            ("あなた", "あなた", "你", "あなたは日本人ですか。", "Are you Japanese?", "第1课"),
-            ("日本人", "にほんじん", "日本人", "彼は日本人です。", "He is Japanese.", "第1课"),
-            
-            // 第2课
-            ("本", "ほん", "书", "これは私の本です。", "This is my book.", "第2课"),
-            ("雑誌", "ざっし", "杂志", "その雑誌は新しいです。", "That magazine is new.", "第2课"),
-            ("新聞", "しんぶん", "报纸", "新聞を読みます。", "I read the newspaper.", "第2课"),
-            
-            // 第3课
-            ("ここ", "ここ", "这里", "ここは学校です。", "Here is the school.", "第3课"),
-            ("そこ", "そこ", "那里", "そこに本があります。", "There is a book over there.", "第3课"),
-            ("あそこ", "あそこ", "那边", "あそこは駅です。", "That is the station over there.", "第3课"),
-            
-            // 第4课
-            ("今", "いま", "现在", "今、何時ですか。", "What time is it now?", "第4课"),
-            ("時間", "じかん", "时间", "時間がありません。", "I don't have time.", "第4课"),
-            ("分", "ふん", "分钟", "あと5分です。", "It's 5 more minutes.", "第4课"),
-            
-            // 第5课
-            ("行きます", "いきます", "去", "学校へ行きます。", "I go to school.", "第5课"),
-            ("来ます", "きます", "来", "友達が来ます。", "A friend is coming.", "第5课"),
-            ("帰ります", "かえります", "回去", "家に帰ります。", "I go home.", "第5课"),
-            
-            // 添加更多课程的词汇...
-            // 第6-50课的词汇
-            ("食べます", "たべます", "吃", "寿司を食べます。", "I eat sushi.", "第6课"),
-            ("飲みます", "のみます", "喝", "お茶を飲みます。", "I drink tea.", "第6课"),
-            
-            ("買います", "かいます", "买", "本を買います。", "I buy a book.", "第7课"),
-            ("売ります", "うります", "卖", "店は果物を売ります。", "The store sells fruit.", "第7课"),
-            
-            ("暑い", "あつい", "热", "今日は暑いです。", "Today is hot.", "第8课"),
-            ("寒い", "さむい", "冷", "冬は寒いです。", "Winter is cold.", "第8课"),
-            
-            ("大きい", "おおきい", "大", "この部屋は大きいです。", "This room is big.", "第9课"),
-            ("小さい", "ちいさい", "小", "小さい箱です。", "It's a small box.", "第9课"),
-            
-            ("新しい", "あたらしい", "新", "新しい車を買いました。", "I bought a new car.", "第10课"),
-            ("古い", "ふるい", "旧", "この建物は古いです。", "This building is old.", "第10课"),
-        ]
-        
-        for (word, pron, meaning, jpEx, enEx, lesson) in minnaWords {
-            words.append(VocabularyWord(
-                word: word,
-                pronunciation: pron,
-                meaning: meaning,
-                japaneseExample: jpEx,
-                englishExample: enEx,
-                lesson: lesson,
-                level: "大家的日本语"
-            ))
-        }
-        
-        // N3 词汇
-        let n3Words = [
-            ("影響", "えいきょう", "影响", "この本は私に大きな影響を与えました。", "This book had a big influence on me.", "N3"),
-            ("経験", "けいけん", "经验", "日本で働く経験があります。", "I have experience working in Japan.", "N3"),
-            ("機会", "きかい", "机会", "また会う機会があればいいですね。", "I hope we have a chance to meet again.", "N3"),
-            ("環境", "かんきょう", "环境", "地球環境を守りましょう。", "Let's protect the global environment.", "N3"),
-            ("関係", "かんけい", "关系", "二人の関係は良好です。", "Their relationship is good.", "N3"),
-        ]
-        
-        for (word, pron, meaning, jpEx, enEx, level) in n3Words {
-            words.append(VocabularyWord(
-                word: word,
-                pronunciation: pron,
-                meaning: meaning,
-                japaneseExample: jpEx,
-                englishExample: enEx,
-                lesson: level,
-                level: "N3"
-            ))
-        }
-        
-        // N2 词汇
-        let n2Words = [
-            ("概念", "がいねん", "概念", "この概念は理解しにくいです。", "This concept is difficult to understand.", "N2"),
-            ("傾向", "けいこう", "倾向", "最近、早婚化の傾向がある。", "Recently, there is a tendency to marry early.", "N2"),
-            ("効果", "こうか", "效果", "薬の効果が現れました。", "The medicine took effect.", "N2"),
-            ("特色", "とくしょく", "特色", "この町の特色は何ですか。", "What is the specialty of this town?", "N2"),
-            ("性質", "せいしつ", "性质", "彼の性質は優しいです。", "His nature is gentle.", "N2"),
-        ]
-        
-        for (word, pron, meaning, jpEx, enEx, level) in n2Words {
-            words.append(VocabularyWord(
-                word: word,
-                pronunciation: pron,
-                meaning: meaning,
-                japaneseExample: jpEx,
-                englishExample: enEx,
-                lesson: level,
-                level: "N2"
-            ))
-        }
-        
-        // N1 词汇
-        let n1Words = [
-            ("概念", "がいねん", "概念", "抽象的な概念を説明する。", "To explain abstract concepts.", "N1"),
-            ("本質", "ほんしつ", "本质", "問題の本質を見極める。", "To grasp the essence of the problem.", "N1"),
-            ("虚栄", "きょえい", "虚荣", "虚栄心を満たす。", "To satisfy vanity.", "N1"),
-            ("憧憬", "どうけい", "憧憬", "未来への憧れを抱く。", "To have aspirations for the future.", "N1"),
-            ("象徴", "しょうちょう", "象征", "桜は日本の象徴です。", "Cherry blossoms are a symbol of Japan.", "N1"),
-        ]
-        
-        for (word, pron, meaning, jpEx, enEx, level) in n1Words {
-            words.append(VocabularyWord(
-                word: word,
-                pronunciation: pron,
-                meaning: meaning,
-                japaneseExample: jpEx,
-                englishExample: enEx,
-                lesson: level,
-                level: "N1"
-            ))
-        }
-        
-        return words
-    }()
-}
 
 #Preview {
     VocabularyView()
