@@ -171,3 +171,4 @@ travel/
   <p>Made with ❤️ for travelers</p>
   <p>© 2026 京都旅游 App. All rights reserved.</p>
 </div>
+# studay
