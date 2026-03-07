@@ -667,55 +667,33 @@ struct CardView: View {
             
             // 例句
             if showExample {
-                VStack(alignment: .leading, spacing: 16) {
-                    // 3条例句循环显示
-                    ForEach(0..<min(3, word.japaneseExamples.count), id: \.self) { index in
-                        VStack(alignment: .leading, spacing: 8) {
-                            HStack {
-                                Image(systemName: "character.book.closed")
-                                    .foregroundColor(.orange)
-                                Text("日语例句 \(index + 1)")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
-                            }
-                            
+                VStack(alignment: .leading, spacing: 12) {
+                    // 2条例句循环显示
+                    ForEach(0..<min(2, word.japaneseExamples.count), id: \.self) { index in
+                        VStack(alignment: .leading, spacing: 6) {
+                            // 日语例句
                             Text(word.japaneseExamples[index])
                                 .font(.body)
                                 .foregroundColor(.primary)
-                            
+
+                            // 中文翻译
                             if index < word.chineseExamples.count {
-                                HStack {
-                                    Image(systemName: "a.circle")
-                                        .foregroundColor(.green)
-                                    Text("中文翻译")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                }
-                                .padding(.top, 4)
-                                
                                 Text(word.chineseExamples[index])
                                     .font(.body)
-                                    .foregroundColor(.primary)
+                                    .foregroundColor(.secondary)
                             }
-                            
+
+                            // 英文翻译
                             if index < word.englishExamples.count {
-                                HStack {
-                                    Image(systemName: "textformat.abc")
-                                        .foregroundColor(.blue)
-                                    Text("English")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                }
-                                .padding(.top, 4)
-                                
                                 Text(word.englishExamples[index])
                                     .font(.body)
-                                    .foregroundColor(.primary)
+                                    .foregroundColor(.gray)
                             }
                         }
                         .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         .background(Color.orange.opacity(0.08))
-                        .cornerRadius(12)
+                        .cornerRadius(10)
                     }
                 }
                 .transition(.opacity)
