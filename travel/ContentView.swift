@@ -113,6 +113,7 @@ struct JapaneseListeningModuleView: View {
     @State private var currentSentenceIndex = 0
     @State private var currentNewsIndex = 0
     @State private var currentEJUIndex = 0
+    @State private var currentConversationIndex = 0
     @State private var selectedChoice = ""
     @State private var resultText = ""
     @State private var revealAnswer = false
@@ -120,6 +121,20 @@ struct JapaneseListeningModuleView: View {
     @StateObject private var speaker = JapaneseListeningSpeaker()
 
     private let sentenceLevels = ["N5", "N4", "N3", "N2"]
+
+    private var minnaConversationData: MinnaConversationData? {
+        MinnaConversationStore.shared.data
+    }
+
+    private var conversationLessons: [MinnaConversationLesson] {
+        minnaConversationData?.lessons ?? []
+    }
+
+    private var currentConversation: MinnaConversationLesson? {
+        guard !conversationLessons.isEmpty else { return nil }
+        let idx = max(0, min(currentConversationIndex, conversationLessons.count - 1))
+        return conversationLessons[idx]
+    }
 
     private var openData: JapaneseListeningOpenData? {
         JapaneseListeningOpenStore.shared.data
@@ -177,7 +192,7 @@ struct JapaneseListeningModuleView: View {
                     Text("日语听力训练")
                         .font(.title3)
                         .fontWeight(.bold)
-                    Text("产品化学习流：分层内容、可操作训练、即时反馈。支持句子、NHK 新闻与 EJU 听解。")
+                    Text("产品化学习流：分层内容、可操作训练、即时反馈。支持句子、NHK 新闻、EJU 听解与大家的日本语会话。")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
@@ -201,6 +216,7 @@ struct JapaneseListeningModuleView: View {
                     StatChip(title: "新闻数", value: "\(newsItems.count)", accent: .blue)
                     StatChip(title: "EJU题数", value: "\(ejuQuestions.count)", accent: .purple)
                     StatChip(title: "真题音频", value: "\(ejuOpenTracks.count)", accent: .indigo)
+                    StatChip(title: "会话数", value: "\(conversationLessons.count)", accent: .green)
                 }
 
                 if selectedMode == .sentences {
@@ -212,7 +228,6 @@ struct JapaneseListeningModuleView: View {
                     .pickerStyle(.segmented)
                     .onChange(of: selectedSentenceLevel) {
                         currentSentenceIndex = 0
-                        resetPracticeState()
                     }
 
                     if let sentence = currentSentence {
@@ -220,7 +235,7 @@ struct JapaneseListeningModuleView: View {
                             HStack {
                                 Image(systemName: "ear.and.waveform")
                                     .foregroundColor(.orange)
-                                Text("句子选择题")
+                                Text("句子听力")
                                     .font(.headline)
                                 Spacer()
                                 Text("\(currentSentenceIndex + 1)/\(sentenceItems.count)")
@@ -228,10 +243,7 @@ struct JapaneseListeningModuleView: View {
                                     .foregroundColor(.secondary)
                             }
 
-                            Text("先听句子，再选择最接近的释义。")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-
+                            // 音频播放控制
                             HStack(spacing: 10) {
                                 Button("播放") {
                                     speakSentence(slow: false)
@@ -250,11 +262,28 @@ struct JapaneseListeningModuleView: View {
                                 .buttonStyle(.bordered)
                             }
 
+                            // 文章展示区域
+                            VStack(alignment: .leading, spacing: 16) {
+                                Text("句子内容")
+                                    .font(.headline)
+                                    .foregroundColor(.orange)
+                                    .padding(.bottom, 4)
+
+                                Text(sentence.jp)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .padding(.vertical, 8)
+
+                                Text(sentence.translation)
+                                    .font(.title3)
+                                    .foregroundColor(.secondary)
+                            }
+
+                            // 导航控制
                             HStack(spacing: 10) {
                                 Button("上一条") {
                                     guard !sentenceItems.isEmpty else { return }
                                     currentSentenceIndex = max(currentSentenceIndex - 1, 0)
-                                    resetPracticeState()
                                 }
                                 .buttonStyle(.bordered)
                                 .disabled(currentSentenceIndex == 0)
@@ -262,62 +291,9 @@ struct JapaneseListeningModuleView: View {
                                 Button("下一条") {
                                     guard !sentenceItems.isEmpty else { return }
                                     currentSentenceIndex = min(currentSentenceIndex + 1, sentenceItems.count - 1)
-                                    resetPracticeState()
                                 }
                                 .buttonStyle(.bordered)
                                 .disabled(currentSentenceIndex >= sentenceItems.count - 1)
-                            }
-
-                            VStack(alignment: .leading, spacing: 8) {
-                                ForEach(sentenceOptions(for: sentence), id: \.self) { option in
-                                    Button {
-                                        selectedChoice = option
-                                    } label: {
-                                        HStack(spacing: 8) {
-                                            Image(systemName: selectedChoice == option ? "largecircle.fill.circle" : "circle")
-                                                .foregroundColor(selectedChoice == option ? .orange : .secondary)
-                                            Text(option)
-                                                .font(.subheadline)
-                                                .foregroundColor(.primary)
-                                            Spacer()
-                                        }
-                                        .padding(10)
-                                        .background(Color.orange.opacity(selectedChoice == option ? 0.16 : 0.06))
-                                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    }
-                                    .buttonStyle(.plain)
-                                }
-                            }
-
-                            HStack(spacing: 10) {
-                                Button("检查") {
-                                    guard !selectedChoice.isEmpty else {
-                                        resultText = "请先选择一个选项"
-                                        return
-                                    }
-                                    resultText = selectedChoice == sentence.translation ? "回答正确" : "未命中，继续听一遍再选"
-                                }
-                                .buttonStyle(.borderedProminent)
-                                .tint(.blue)
-
-                                Button(revealAnswer ? "隐藏答案" : "显示答案") {
-                                    revealAnswer.toggle()
-                                }
-                                .buttonStyle(.bordered)
-                            }
-
-                            if !resultText.isEmpty {
-                                Text("结果：\(resultText)")
-                                    .font(.caption)
-                                    .foregroundColor(resultText == "回答正确" ? .green : .orange)
-                            }
-
-                            if revealAnswer {
-                                Text("原句：\(sentence.jp)")
-                                    .font(.subheadline)
-                                Text("释义：\(sentence.translation)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -342,7 +318,7 @@ struct JapaneseListeningModuleView: View {
                             HStack {
                                 Image(systemName: "newspaper.fill")
                                     .foregroundColor(.blue)
-                                Text("NHK 新闻选择题")
+                                Text("NHK 新闻听力")
                                     .font(.headline)
                                 Spacer()
                                 Text("\(currentNewsIndex + 1)/\(newsItems.count)")
@@ -350,10 +326,7 @@ struct JapaneseListeningModuleView: View {
                                     .foregroundColor(.secondary)
                             }
 
-                            Text("先听标题，再选择对应摘要。")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-
+                            // 音频播放控制
                             HStack(spacing: 10) {
                                 Button("播放标题") {
                                     speakNewsTitle(slow: false)
@@ -372,11 +345,34 @@ struct JapaneseListeningModuleView: View {
                                 .buttonStyle(.bordered)
                             }
 
+                            // 文章展示区域
+                            VStack(alignment: .leading, spacing: 16) {
+                                Text("新闻内容")
+                                    .font(.headline)
+                                    .foregroundColor(.blue)
+                                    .padding(.bottom, 4)
+
+                                Text(news.title)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .padding(.vertical, 8)
+
+                                Text(news.summary)
+                                    .font(.body)
+                                    .foregroundColor(.secondary)
+
+                                if !news.link.isEmpty {
+                                    Link("查看原文", destination: URL(string: news.link)!)
+                                        .font(.subheadline)
+                                        .foregroundColor(.blue)
+                                }
+                            }
+
+                            // 导航控制
                             HStack(spacing: 10) {
                                 Button("上一条") {
                                     guard !newsItems.isEmpty else { return }
                                     currentNewsIndex = max(currentNewsIndex - 1, 0)
-                                    resetPracticeState()
                                 }
                                 .buttonStyle(.bordered)
                                 .disabled(currentNewsIndex == 0)
@@ -384,68 +380,9 @@ struct JapaneseListeningModuleView: View {
                                 Button("下一条") {
                                     guard !newsItems.isEmpty else { return }
                                     currentNewsIndex = min(currentNewsIndex + 1, newsItems.count - 1)
-                                    resetPracticeState()
                                 }
                                 .buttonStyle(.bordered)
                                 .disabled(currentNewsIndex >= newsItems.count - 1)
-                            }
-
-                            VStack(alignment: .leading, spacing: 8) {
-                                ForEach(newsOptions(for: news), id: \.self) { option in
-                                    Button {
-                                        selectedChoice = option
-                                    } label: {
-                                        HStack(spacing: 8) {
-                                            Image(systemName: selectedChoice == option ? "largecircle.fill.circle" : "circle")
-                                                .foregroundColor(selectedChoice == option ? .blue : .secondary)
-                                            Text(option)
-                                                .font(.subheadline)
-                                                .foregroundColor(.primary)
-                                                .multilineTextAlignment(.leading)
-                                            Spacer()
-                                        }
-                                        .padding(10)
-                                        .background(Color.blue.opacity(selectedChoice == option ? 0.16 : 0.06))
-                                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    }
-                                    .buttonStyle(.plain)
-                                }
-                            }
-
-                            HStack(spacing: 10) {
-                                Button("检查") {
-                                    guard !selectedChoice.isEmpty else {
-                                        resultText = "请先选择一个选项"
-                                        return
-                                    }
-                                    resultText = selectedChoice == news.summary ? "回答正确" : "未命中，建议重听标题"
-                                }
-                                .buttonStyle(.borderedProminent)
-                                .tint(.blue)
-
-                                Button(revealAnswer ? "隐藏答案" : "显示答案") {
-                                    revealAnswer.toggle()
-                                }
-                                .buttonStyle(.bordered)
-                            }
-
-                            if !resultText.isEmpty {
-                                Text("结果：\(resultText)")
-                                    .font(.caption)
-                                    .foregroundColor(resultText == "回答正确" ? .green : .orange)
-                            }
-
-                            if revealAnswer {
-                                Text("标题：\(news.title)")
-                                    .font(.subheadline)
-                                    .fontWeight(.semibold)
-                                Text("摘要：\(news.summary)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                                if !news.link.isEmpty {
-                                    Link("查看原文", destination: URL(string: news.link)!)
-                                        .font(.footnote)
-                                }
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -460,6 +397,150 @@ struct JapaneseListeningModuleView: View {
 
                     if let source = openData?.meta.nhkSource {
                         Text("新闻来源：\(source)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                } else if selectedMode == .conversations {
+                    if let conversation = currentConversation {
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack {
+                                Image(systemName: "text.bubble.fill")
+                                    .foregroundColor(.green)
+                                Text("大家的日本语会话")
+                                    .font(.headline)
+                                Spacer()
+                                Text("\(currentConversationIndex + 1)/\(conversationLessons.count)")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+
+                            Text("第\(conversation.lesson_number)课 - \(conversation.title)")
+                                .font(.title3)
+                                .fontWeight(.bold)
+
+                            // 音频播放控制
+                            HStack(spacing: 10) {
+                                Button("播放整课") {
+                                    speakConversationEntire(slow: false)
+                                }
+                                .buttonStyle(.borderedProminent)
+                                .tint(.green)
+
+                                Button("慢速播放") {
+                                    speakConversationEntire(slow: true)
+                                }
+                                .buttonStyle(.bordered)
+
+                                Button("停止") {
+                                    speaker.stop()
+                                }
+                                .buttonStyle(.bordered)
+
+                                if let audioURL = conversation.audio_url {
+                                    Button("播放音频文件") {
+                                        if let url = URL(string: audioURL) {
+                                            speaker.play(url: url)
+                                        }
+                                    }
+                                    .buttonStyle(.bordered)
+                                }
+
+                                if let filename = conversation.audio_filename {
+                                    Text(filename)
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+
+                            // 文章展示区域
+                            VStack(alignment: .leading, spacing: 16) {
+                                Text("会话内容")
+                                    .font(.headline)
+                                    .foregroundColor(.green)
+                                    .padding(.bottom, 4)
+
+                                ForEach(Array(conversation.dialogues.enumerated()), id: \.element.id) { index, dialogue in
+                                    HStack(alignment: .top, spacing: 12) {
+                                        // 发言者头像
+                                        Circle()
+                                            .fill(dialogue.speaker == "田中" ? Color.blue : Color.orange)
+                                            .frame(width: 36, height: 36)
+                                            .overlay(
+                                                Text(String(dialogue.speaker.prefix(1)))
+                                                    .font(.headline)
+                                                    .foregroundColor(.white)
+                                            )
+
+                                        VStack(alignment: .leading, spacing: 6) {
+                                            Text(dialogue.speaker)
+                                                .font(.caption)
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.secondary)
+
+                                            // 日语句子
+                                            Text(dialogue.japanese)
+                                                .font(.body)
+                                                .fontWeight(.medium)
+
+                                            // 中文翻译
+                                            Text(dialogue.chinese)
+                                                .font(.subheadline)
+                                                .foregroundColor(.secondary)
+
+                                            // 英文翻译
+                                            Text(dialogue.english)
+                                                .font(.caption)
+                                                .foregroundColor(.secondary.opacity(0.8))
+                                        }
+
+                                        Spacer()
+
+                                        // 播放单个对话按钮
+                                        Button {
+                                            speakConversationDialogue(dialogueIndex: index, slow: false)
+                                        } label: {
+                                            Image(systemName: "play.circle.fill")
+                                                .font(.title3)
+                                                .foregroundColor(.green)
+                                        }
+                                        .buttonStyle(.plain)
+                                    }
+                                    .padding(12)
+                                    .background(Color(.secondarySystemBackground))
+                                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                                }
+                            }
+
+                            // 导航控制
+                            HStack(spacing: 10) {
+                                Button("上一课") {
+                                    guard !conversationLessons.isEmpty else { return }
+                                    currentConversationIndex = max(currentConversationIndex - 1, 0)
+                                }
+                                .buttonStyle(.bordered)
+                                .disabled(currentConversationIndex == 0)
+
+                                Button("下一课") {
+                                    guard !conversationLessons.isEmpty else { return }
+                                    currentConversationIndex = min(currentConversationIndex + 1, conversationLessons.count - 1)
+                                }
+                                .buttonStyle(.bordered)
+                                .disabled(currentConversationIndex >= conversationLessons.count - 1)
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                        .background(Color(.systemBackground))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 14)
+                                .stroke(Color.green.opacity(0.22), lineWidth: 1)
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                    }
+
+                    if let source = minnaConversationData?.meta.source {
+                        Text("会话来源：\(source)")
                             .font(.caption)
                             .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -517,12 +598,9 @@ struct JapaneseListeningModuleView: View {
                             HStack(spacing: 10) {
                                 StatChip(title: "分类", value: question.category.rawValue, accent: .purple)
                                 StatChip(title: "难度", value: question.difficulty, accent: .purple)
-                                StatChip(title: "目标", value: "抓主旨+细节", accent: .purple)
                             }
 
-                            Text(question.prompt)
-                                .font(.subheadline)
-
+                            // 音频播放控制
                             HStack(spacing: 10) {
                                 Button("播放题干") {
                                     speakEJUPrompt(slow: false)
@@ -541,11 +619,37 @@ struct JapaneseListeningModuleView: View {
                                 .buttonStyle(.bordered)
                             }
 
+                            // 文章展示区域
+                            VStack(alignment: .leading, spacing: 16) {
+                                Text("听力内容")
+                                    .font(.headline)
+                                    .foregroundColor(.purple)
+                                    .padding(.bottom, 4)
+
+                                Text(question.prompt)
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .padding(.vertical, 8)
+
+                                Text(question.script)
+                                    .font(.body)
+                                    .foregroundColor(.primary)
+
+                                Text("解析")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .padding(.top, 8)
+
+                                Text(question.explanation)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+
+                            // 导航控制
                             HStack(spacing: 10) {
                                 Button("上一题") {
                                     guard !filteredEJUQuestions.isEmpty else { return }
                                     currentEJUIndex = max(currentEJUIndex - 1, 0)
-                                    resetPracticeState()
                                 }
                                 .buttonStyle(.bordered)
                                 .disabled(currentEJUIndex == 0)
@@ -553,73 +657,9 @@ struct JapaneseListeningModuleView: View {
                                 Button("下一题") {
                                     guard !filteredEJUQuestions.isEmpty else { return }
                                     currentEJUIndex = min(currentEJUIndex + 1, filteredEJUQuestions.count - 1)
-                                    resetPracticeState()
                                 }
                                 .buttonStyle(.bordered)
                                 .disabled(currentEJUIndex >= filteredEJUQuestions.count - 1)
-                            }
-
-                            VStack(alignment: .leading, spacing: 8) {
-                                ForEach(Array(question.options.enumerated()), id: \.offset) { idx, option in
-                                    let taggedOption = "\(["A", "B", "C", "D"][idx]). \(option)"
-                                    Button {
-                                        selectedChoice = option
-                                    } label: {
-                                        HStack(spacing: 8) {
-                                            Image(systemName: selectedChoice == option ? "largecircle.fill.circle" : "circle")
-                                                .foregroundColor(selectedChoice == option ? .purple : .secondary)
-                                            Text(taggedOption)
-                                                .font(.subheadline)
-                                                .foregroundColor(.primary)
-                                                .multilineTextAlignment(.leading)
-                                            Spacer()
-                                        }
-                                        .padding(10)
-                                        .background(Color.purple.opacity(selectedChoice == option ? 0.16 : 0.06))
-                                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    }
-                                    .buttonStyle(.plain)
-                                }
-                            }
-
-                            HStack(spacing: 10) {
-                                Button("检查") {
-                                    guard !selectedChoice.isEmpty else {
-                                        resultText = "请先选择一个选项"
-                                        return
-                                    }
-                                    if selectedChoice == question.options[question.answerIndex] {
-                                        resultText = "回答正确"
-                                        completedEJUQuestionIDs.insert(question.id)
-                                    } else {
-                                        resultText = "未命中，建议重听并抓转折词"
-                                    }
-                                }
-                                .buttonStyle(.borderedProminent)
-                                .tint(.purple)
-
-                                Button(revealAnswer ? "隐藏解析" : "显示解析") {
-                                    revealAnswer.toggle()
-                                }
-                                .buttonStyle(.bordered)
-                            }
-
-                            if !resultText.isEmpty {
-                                Text("结果：\(resultText)")
-                                    .font(.caption)
-                                    .foregroundColor(resultText == "回答正确" ? .green : .orange)
-                            }
-
-                            if revealAnswer {
-                                Text("正确答案：\(["A", "B", "C", "D"][question.answerIndex]). \(question.options[question.answerIndex])")
-                                    .font(.subheadline)
-                                    .fontWeight(.semibold)
-                                Text("听力文本：\(question.script)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                                Text("解析：\(question.explanation)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -632,7 +672,7 @@ struct JapaneseListeningModuleView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                     }
 
-                    Text("EJU 模式定位：先题干预判 -> 听中抓关键词 -> 听后选择并复盘解析。")
+                    Text("EJU 模式定位：先预判问题 -> 听音频 -> 对照文本和解析学习。")
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -767,6 +807,19 @@ struct JapaneseListeningModuleView: View {
         speaker.speak(text: question.script, language: "ja-JP", rate: slow ? 0.35 : 0.5)
     }
 
+    private func speakConversationDialogue(dialogueIndex: Int, slow: Bool) {
+        guard let conversation = currentConversation,
+              dialogueIndex < conversation.dialogues.count else { return }
+        let dialogue = conversation.dialogues[dialogueIndex]
+        speaker.speak(text: dialogue.japanese, language: "ja-JP", rate: slow ? 0.35 : 0.5)
+    }
+
+    private func speakConversationEntire(slow: Bool) {
+        guard let conversation = currentConversation else { return }
+        let fullText = conversation.dialogues.map { $0.japanese }.joined(separator: " ")
+        speaker.speak(text: fullText, language: "ja-JP", rate: slow ? 0.35 : 0.5)
+    }
+
     private func resetPracticeState() {
         selectedChoice = ""
         resultText = ""
@@ -778,6 +831,7 @@ private enum JapaneseListeningMode: String, CaseIterable {
     case sentences = "句子听力"
     case news = "NHK新闻"
     case eju = "EJU听解"
+    case conversations = "大家的日本语会话"
 }
 
 @MainActor
@@ -2839,6 +2893,116 @@ struct StatChip: View {
         .padding(.vertical, 8)
         .background(accent.opacity(0.12))
         .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+}
+
+// MARK: - 大家的日本语会话数据模型
+struct MinnaConversationData: Codable {
+    let meta: MinnaConversationMeta
+    let lessons: [MinnaConversationLesson]
+}
+
+struct MinnaConversationMeta: Codable {
+    let source: String
+    let description: String
+    let total_lessons: Int
+    let generated_at: String
+}
+
+struct MinnaConversationLesson: Codable, Identifiable {
+    var id: UUID = UUID()
+    let lesson_number: Int
+    let title: String
+    let dialogues: [Dialogue]
+    let audio_url: String?
+    let audio_filename: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case lesson_number
+        case title
+        case dialogues
+        case audio_url
+        case audio_filename
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = UUID()
+        lesson_number = try container.decode(Int.self, forKey: .lesson_number)
+        title = try container.decode(String.self, forKey: .title)
+        dialogues = try container.decode([Dialogue].self, forKey: .dialogues)
+        audio_url = try container.decodeIfPresent(String.self, forKey: .audio_url)
+        audio_filename = try container.decodeIfPresent(String.self, forKey: .audio_filename)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(lesson_number, forKey: .lesson_number)
+        try container.encode(title, forKey: .title)
+        try container.encode(dialogues, forKey: .dialogues)
+        try container.encodeIfPresent(audio_url, forKey: .audio_url)
+        try container.encodeIfPresent(audio_filename, forKey: .audio_filename)
+    }
+}
+
+struct Dialogue: Codable, Identifiable {
+    var id: UUID = UUID()
+    let speaker: String
+    let japanese: String
+    let chinese: String
+    let english: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case speaker
+        case japanese
+        case chinese
+        case english
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = UUID()
+        speaker = try container.decode(String.self, forKey: .speaker)
+        japanese = try container.decode(String.self, forKey: .japanese)
+        chinese = try container.decode(String.self, forKey: .chinese)
+        english = try container.decode(String.self, forKey: .english)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(speaker, forKey: .speaker)
+        try container.encode(japanese, forKey: .japanese)
+        try container.encode(chinese, forKey: .chinese)
+        try container.encode(english, forKey: .english)
+    }
+}
+
+@MainActor
+final class MinnaConversationStore: ObservableObject {
+    static let shared = MinnaConversationStore()
+    @Published var data: MinnaConversationData?
+
+    private init() {
+        load()
+    }
+
+    private func load() {
+        guard let url = Bundle.main.url(forResource: "minna_conversation_lessons", withExtension: "json") else {
+            print("❌ 未找到 minna_conversation_lessons.json")
+            return
+        }
+
+        do {
+            let data = try Data(contentsOf: url)
+            self.data = try JSONDecoder().decode(MinnaConversationData.self, from: data)
+            print("✓ 大家的日本语会话数据加载成功: \(self.data?.lessons.count ?? 0) 课")
+        } catch {
+            print("❌ 加载大家的日本语会话数据失败: \(error)")
+        }
     }
 }
 

@@ -1,0 +1,1370 @@
+{
+  "meta": {
+    "source": "大家的日本语会话1-50课",
+    "description": "Minna no Nihongo Conversation Lessons 1-50",
+    "total_lessons": 50,
+    "generated_at": "2026-03-07 23:03:42"
+  },
+  "lessons": [
+    {
+      "lesson_number": 1,
+      "title": "初次见面",
+      "dialogues": [
+        {
+          "speaker": "田中",
+          "japanese": "初めまして。田中です。",
+          "chinese": "初次见面。我是田中。",
+          "english": "Nice to meet you. I am Tanaka."
+        },
+        {
+          "speaker": "李",
+          "japanese": "初めまして。李です。よろしくお願いします。",
+          "chinese": "初次见面。我是小李。请多关照。",
+          "english": "Nice to meet you. I am Li. Nice to meet you."
+        },
+        {
+          "speaker": "田中",
+          "japanese": "こちらこそ。よろしくお願いします。",
+          "chinese": "彼此彼此。请多关照。",
+          "english": "Likewise. Nice to meet you."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson01.mp3",
+      "audio_filename": "lesson01.mp3"
+    },
+    {
+      "lesson_number": 2,
+      "title": "这是什么？",
+      "dialogues": [
+        {
+          "speaker": "先生",
+          "japanese": "これは何ですか。",
+          "chinese": "这是什么？",
+          "english": "What is this?"
+        },
+        {
+          "speaker": "学生",
+          "japanese": "それは本です。",
+          "chinese": "那是书。",
+          "english": "That is a book."
+        },
+        {
+          "speaker": "先生",
+          "japanese": "これは本ですか。",
+          "chinese": "这是书吗？",
+          "english": "Is this a book?"
+        },
+        {
+          "speaker": "学生",
+          "japanese": "はい、そうです。",
+          "chinese": "是的，是书。",
+          "english": "Yes, it is."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson02.mp3",
+      "audio_filename": "lesson02.mp3"
+    },
+    {
+      "lesson_number": 3,
+      "title": "在哪里？",
+      "dialogues": [
+        {
+          "speaker": "李",
+          "japanese": "李さんはどこですか。",
+          "chinese": "小李在哪里？",
+          "english": "Where is Li?"
+        },
+        {
+          "speaker": "田中",
+          "japanese": "食堂です。",
+          "chinese": "在食堂。",
+          "english": "In the cafeteria."
+        },
+        {
+          "speaker": "李",
+          "japanese": "郵便局はどこですか。",
+          "chinese": "邮局在哪里？",
+          "english": "Where is the post office?"
+        },
+        {
+          "speaker": "田中",
+          "japanese": "あそこです。",
+          "chinese": "在那边。",
+          "english": "Over there."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson03.mp3",
+      "audio_filename": "lesson03.mp3"
+    },
+    {
+      "lesson_number": 4,
+      "title": "现在几点？",
+      "dialogues": [
+        {
+          "speaker": "李",
+          "japanese": "今、何時ですか。",
+          "chinese": "现在几点？",
+          "english": "What time is it now?"
+        },
+        {
+          "speaker": "田中",
+          "japanese": "8時です。",
+          "chinese": "8点。",
+          "english": "It's 8 o'clock."
+        },
+        {
+          "speaker": "李",
+          "japanese": "朝ご飯は何時ですか。",
+          "chinese": "早餐几点？",
+          "english": "What time is breakfast?"
+        },
+        {
+          "speaker": "田中",
+          "japanese": "7時半です。",
+          "chinese": "7点半。",
+          "english": "7:30."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson04.mp3",
+      "audio_filename": "lesson04.mp3"
+    },
+    {
+      "lesson_number": 5,
+      "title": "去学校",
+      "dialogues": [
+        {
+          "speaker": "先生",
+          "japanese": "李さん、毎日学校へ行きますか。",
+          "chinese": "小李，你每天去学校吗？",
+          "english": "Li, do you go to school every day?"
+        },
+        {
+          "speaker": "李",
+          "japanese": "はい、行きます。",
+          "chinese": "是的，去。",
+          "english": "Yes, I do."
+        },
+        {
+          "speaker": "先生",
+          "japanese": "何で行きますか。",
+          "chinese": "怎么去？",
+          "english": "How do you go?"
+        },
+        {
+          "speaker": "李",
+          "japanese": "電車で行きます。",
+          "chinese": "坐电车去。",
+          "english": "By train."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson05.mp3",
+      "audio_filename": "lesson05.mp3"
+    },
+    {
+      "lesson_number": 6,
+      "title": "喜欢的东西",
+      "dialogues": [
+        {
+          "speaker": "田中",
+          "japanese": "何が好きですか。",
+          "chinese": "喜欢什么？",
+          "english": "What do you like?"
+        },
+        {
+          "speaker": "李",
+          "japanese": "テニスが好きです。",
+          "chinese": "喜欢网球。",
+          "english": "I like tennis."
+        },
+        {
+          "speaker": "田中",
+          "japanese": "音楽が好きですか。",
+          "chinese": "喜欢音乐吗？",
+          "english": "Do you like music?"
+        },
+        {
+          "speaker": "李",
+          "japanese": "いいえ、あまり好きじゃありません。",
+          "chinese": "不，不太喜欢。",
+          "english": "No, not so much."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson06.mp3",
+      "audio_filename": "lesson06.mp3"
+    },
+    {
+      "lesson_number": 7,
+      "title": "铃木先生",
+      "dialogues": [
+        {
+          "speaker": "李",
+          "japanese": "どなたが鈴木先生ですか。",
+          "chinese": "哪位是铃木老师？",
+          "english": "Who is Mr. Suzuki?"
+        },
+        {
+          "speaker": "田中",
+          "japanese": "この人です。",
+          "chinese": "这个人。",
+          "english": "This person."
+        },
+        {
+          "speaker": "李",
+          "japanese": "あの人はだれですか。",
+          "chinese": "那个人是谁？",
+          "english": "Who is that person?"
+        },
+        {
+          "speaker": "田中",
+          "japanese": "田中さんです。",
+          "chinese": "是田中先生。",
+          "english": "Mr. Tanaka."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson07.mp3",
+      "audio_filename": "lesson07.mp3"
+    },
+    {
+      "lesson_number": 8,
+      "title": "周末做什么",
+      "dialogues": [
+        {
+          "speaker": "田中",
+          "japanese": "週末は何をしますか。",
+          "chinese": "周末做什么？",
+          "english": "What do you do on weekends?"
+        },
+        {
+          "speaker": "李",
+          "japanese": "友達と買い物に行きます。",
+          "chinese": "和朋友去买东西。",
+          "english": "I go shopping with friends."
+        },
+        {
+          "speaker": "田中",
+          "japanese": "どこへ行きますか。",
+          "chinese": "去哪里？",
+          "english": "Where do you go?"
+        },
+        {
+          "speaker": "李",
+          "japanese": "銀座へ行きます。",
+          "chinese": "去银座。",
+          "english": "To Ginza."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson08.mp3",
+      "audio_filename": "lesson08.mp3"
+    },
+    {
+      "lesson_number": 9,
+      "title": "照片",
+      "dialogues": [
+        {
+          "speaker": "先生",
+          "japanese": "これは誰の写真ですか。",
+          "chinese": "这是谁的照片？",
+          "english": "Whose photo is this?"
+        },
+        {
+          "speaker": "学生",
+          "japanese": "私の家族の写真です。",
+          "chinese": "我家人的照片。",
+          "english": "My family photo."
+        },
+        {
+          "speaker": "先生",
+          "japanese": "この人は誰ですか。",
+          "chinese": "这个人是谁？",
+          "english": "Who is this person?"
+        },
+        {
+          "speaker": "学生",
+          "japanese": "私の弟です。",
+          "chinese": "我的弟弟。",
+          "english": "My brother."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson09.mp3",
+      "audio_filename": "lesson09.mp3"
+    },
+    {
+      "lesson_number": 10,
+      "title": "城市地图",
+      "dialogues": [
+        {
+          "speaker": "李",
+          "japanese": "すみません。郵便局はどこですか。",
+          "chinese": "请问，邮局在哪里？",
+          "english": "Excuse me. Where is the post office?"
+        },
+        {
+          "speaker": "通行人",
+          "japanese": "あそこです。",
+          "chinese": "在那边。",
+          "english": "Over there."
+        },
+        {
+          "speaker": "李",
+          "japanese": "駅はどこですか。",
+          "chinese": "车站在哪里？",
+          "english": "Where is the station?"
+        },
+        {
+          "speaker": "通行人",
+          "japanese": "この道をまっすぐ行ってください。",
+          "chinese": "请沿着这条路直走。",
+          "english": "Please go straight along this road."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson10.mp3",
+      "audio_filename": "lesson10.mp3"
+    },
+    {
+      "lesson_number": 11,
+      "title": "第11课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第11课的示例句子1。",
+          "chinese": "这是第11课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 11."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第11课的示例句子2。",
+          "chinese": "这是第11课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 11."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第11课的示例句子3。",
+          "chinese": "这是第11课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 11."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第11课的示例句子4。",
+          "chinese": "这是第11课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 11."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson11.mp3",
+      "audio_filename": "lesson11.mp3"
+    },
+    {
+      "lesson_number": 12,
+      "title": "第12课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第12课的示例句子1。",
+          "chinese": "这是第12课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 12."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第12课的示例句子2。",
+          "chinese": "这是第12课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 12."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson12.mp3",
+      "audio_filename": "lesson12.mp3"
+    },
+    {
+      "lesson_number": 13,
+      "title": "第13课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第13课的示例句子1。",
+          "chinese": "这是第13课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 13."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第13课的示例句子2。",
+          "chinese": "这是第13课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 13."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第13课的示例句子3。",
+          "chinese": "这是第13课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 13."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson13.mp3",
+      "audio_filename": "lesson13.mp3"
+    },
+    {
+      "lesson_number": 14,
+      "title": "第14课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第14课的示例句子1。",
+          "chinese": "这是第14课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 14."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第14课的示例句子2。",
+          "chinese": "这是第14课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 14."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第14课的示例句子3。",
+          "chinese": "这是第14课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 14."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第14课的示例句子4。",
+          "chinese": "这是第14课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 14."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson14.mp3",
+      "audio_filename": "lesson14.mp3"
+    },
+    {
+      "lesson_number": 15,
+      "title": "第15课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第15课的示例句子1。",
+          "chinese": "这是第15课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 15."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第15课的示例句子2。",
+          "chinese": "这是第15课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 15."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson15.mp3",
+      "audio_filename": "lesson15.mp3"
+    },
+    {
+      "lesson_number": 16,
+      "title": "第16课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第16课的示例句子1。",
+          "chinese": "这是第16课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 16."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第16课的示例句子2。",
+          "chinese": "这是第16课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 16."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第16课的示例句子3。",
+          "chinese": "这是第16课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 16."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson16.mp3",
+      "audio_filename": "lesson16.mp3"
+    },
+    {
+      "lesson_number": 17,
+      "title": "第17课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第17课的示例句子1。",
+          "chinese": "这是第17课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 17."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第17课的示例句子2。",
+          "chinese": "这是第17课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 17."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第17课的示例句子3。",
+          "chinese": "这是第17课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 17."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第17课的示例句子4。",
+          "chinese": "这是第17课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 17."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson17.mp3",
+      "audio_filename": "lesson17.mp3"
+    },
+    {
+      "lesson_number": 18,
+      "title": "第18课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第18课的示例句子1。",
+          "chinese": "这是第18课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 18."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第18课的示例句子2。",
+          "chinese": "这是第18课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 18."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson18.mp3",
+      "audio_filename": "lesson18.mp3"
+    },
+    {
+      "lesson_number": 19,
+      "title": "第19课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第19课的示例句子1。",
+          "chinese": "这是第19课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 19."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第19课的示例句子2。",
+          "chinese": "这是第19课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 19."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第19课的示例句子3。",
+          "chinese": "这是第19课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 19."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson19.mp3",
+      "audio_filename": "lesson19.mp3"
+    },
+    {
+      "lesson_number": 20,
+      "title": "第20课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第20课的示例句子1。",
+          "chinese": "这是第20课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 20."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第20课的示例句子2。",
+          "chinese": "这是第20课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 20."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第20课的示例句子3。",
+          "chinese": "这是第20课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 20."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第20课的示例句子4。",
+          "chinese": "这是第20课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 20."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson20.mp3",
+      "audio_filename": "lesson20.mp3"
+    },
+    {
+      "lesson_number": 21,
+      "title": "第21课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第21课的示例句子1。",
+          "chinese": "这是第21课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 21."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第21课的示例句子2。",
+          "chinese": "这是第21课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 21."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson21.mp3",
+      "audio_filename": "lesson21.mp3"
+    },
+    {
+      "lesson_number": 22,
+      "title": "第22课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第22课的示例句子1。",
+          "chinese": "这是第22课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 22."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第22课的示例句子2。",
+          "chinese": "这是第22课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 22."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第22课的示例句子3。",
+          "chinese": "这是第22课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 22."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson22.mp3",
+      "audio_filename": "lesson22.mp3"
+    },
+    {
+      "lesson_number": 23,
+      "title": "第23课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第23课的示例句子1。",
+          "chinese": "这是第23课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 23."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第23课的示例句子2。",
+          "chinese": "这是第23课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 23."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第23课的示例句子3。",
+          "chinese": "这是第23课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 23."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第23课的示例句子4。",
+          "chinese": "这是第23课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 23."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson23.mp3",
+      "audio_filename": "lesson23.mp3"
+    },
+    {
+      "lesson_number": 24,
+      "title": "第24课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第24课的示例句子1。",
+          "chinese": "这是第24课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 24."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第24课的示例句子2。",
+          "chinese": "这是第24课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 24."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson24.mp3",
+      "audio_filename": "lesson24.mp3"
+    },
+    {
+      "lesson_number": 25,
+      "title": "第25课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第25课的示例句子1。",
+          "chinese": "这是第25课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 25."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第25课的示例句子2。",
+          "chinese": "这是第25课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 25."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第25课的示例句子3。",
+          "chinese": "这是第25课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 25."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson25.mp3",
+      "audio_filename": "lesson25.mp3"
+    },
+    {
+      "lesson_number": 26,
+      "title": "第26课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第26课的示例句子1。",
+          "chinese": "这是第26课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 26."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第26课的示例句子2。",
+          "chinese": "这是第26课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 26."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第26课的示例句子3。",
+          "chinese": "这是第26课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 26."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第26课的示例句子4。",
+          "chinese": "这是第26课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 26."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson26.mp3",
+      "audio_filename": "lesson26.mp3"
+    },
+    {
+      "lesson_number": 27,
+      "title": "第27课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第27课的示例句子1。",
+          "chinese": "这是第27课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 27."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第27课的示例句子2。",
+          "chinese": "这是第27课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 27."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson27.mp3",
+      "audio_filename": "lesson27.mp3"
+    },
+    {
+      "lesson_number": 28,
+      "title": "第28课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第28课的示例句子1。",
+          "chinese": "这是第28课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 28."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第28课的示例句子2。",
+          "chinese": "这是第28课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 28."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第28课的示例句子3。",
+          "chinese": "这是第28课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 28."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson28.mp3",
+      "audio_filename": "lesson28.mp3"
+    },
+    {
+      "lesson_number": 29,
+      "title": "第29课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第29课的示例句子1。",
+          "chinese": "这是第29课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 29."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第29课的示例句子2。",
+          "chinese": "这是第29课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 29."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第29课的示例句子3。",
+          "chinese": "这是第29课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 29."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第29课的示例句子4。",
+          "chinese": "这是第29课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 29."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson29.mp3",
+      "audio_filename": "lesson29.mp3"
+    },
+    {
+      "lesson_number": 30,
+      "title": "第30课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第30课的示例句子1。",
+          "chinese": "这是第30课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 30."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第30课的示例句子2。",
+          "chinese": "这是第30课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 30."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson30.mp3",
+      "audio_filename": "lesson30.mp3"
+    },
+    {
+      "lesson_number": 31,
+      "title": "第31课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第31课的示例句子1。",
+          "chinese": "这是第31课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 31."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第31课的示例句子2。",
+          "chinese": "这是第31课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 31."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第31课的示例句子3。",
+          "chinese": "这是第31课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 31."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson31.mp3",
+      "audio_filename": "lesson31.mp3"
+    },
+    {
+      "lesson_number": 32,
+      "title": "第32课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第32课的示例句子1。",
+          "chinese": "这是第32课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 32."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第32课的示例句子2。",
+          "chinese": "这是第32课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 32."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第32课的示例句子3。",
+          "chinese": "这是第32课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 32."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第32课的示例句子4。",
+          "chinese": "这是第32课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 32."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson32.mp3",
+      "audio_filename": "lesson32.mp3"
+    },
+    {
+      "lesson_number": 33,
+      "title": "第33课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第33课的示例句子1。",
+          "chinese": "这是第33课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 33."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第33课的示例句子2。",
+          "chinese": "这是第33课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 33."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson33.mp3",
+      "audio_filename": "lesson33.mp3"
+    },
+    {
+      "lesson_number": 34,
+      "title": "第34课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第34课的示例句子1。",
+          "chinese": "这是第34课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 34."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第34课的示例句子2。",
+          "chinese": "这是第34课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 34."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第34课的示例句子3。",
+          "chinese": "这是第34课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 34."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson34.mp3",
+      "audio_filename": "lesson34.mp3"
+    },
+    {
+      "lesson_number": 35,
+      "title": "第35课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第35课的示例句子1。",
+          "chinese": "这是第35课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 35."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第35课的示例句子2。",
+          "chinese": "这是第35课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 35."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第35课的示例句子3。",
+          "chinese": "这是第35课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 35."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第35课的示例句子4。",
+          "chinese": "这是第35课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 35."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson35.mp3",
+      "audio_filename": "lesson35.mp3"
+    },
+    {
+      "lesson_number": 36,
+      "title": "第36课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第36课的示例句子1。",
+          "chinese": "这是第36课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 36."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第36课的示例句子2。",
+          "chinese": "这是第36课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 36."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson36.mp3",
+      "audio_filename": "lesson36.mp3"
+    },
+    {
+      "lesson_number": 37,
+      "title": "第37课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第37课的示例句子1。",
+          "chinese": "这是第37课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 37."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第37课的示例句子2。",
+          "chinese": "这是第37课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 37."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第37课的示例句子3。",
+          "chinese": "这是第37课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 37."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson37.mp3",
+      "audio_filename": "lesson37.mp3"
+    },
+    {
+      "lesson_number": 38,
+      "title": "第38课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第38课的示例句子1。",
+          "chinese": "这是第38课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 38."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第38课的示例句子2。",
+          "chinese": "这是第38课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 38."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第38课的示例句子3。",
+          "chinese": "这是第38课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 38."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第38课的示例句子4。",
+          "chinese": "这是第38课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 38."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson38.mp3",
+      "audio_filename": "lesson38.mp3"
+    },
+    {
+      "lesson_number": 39,
+      "title": "第39课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第39课的示例句子1。",
+          "chinese": "这是第39课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 39."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第39课的示例句子2。",
+          "chinese": "这是第39课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 39."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson39.mp3",
+      "audio_filename": "lesson39.mp3"
+    },
+    {
+      "lesson_number": 40,
+      "title": "第40课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第40课的示例句子1。",
+          "chinese": "这是第40课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 40."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第40课的示例句子2。",
+          "chinese": "这是第40课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 40."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第40课的示例句子3。",
+          "chinese": "这是第40课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 40."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson40.mp3",
+      "audio_filename": "lesson40.mp3"
+    },
+    {
+      "lesson_number": 41,
+      "title": "第41课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第41课的示例句子1。",
+          "chinese": "这是第41课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 41."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第41课的示例句子2。",
+          "chinese": "这是第41课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 41."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第41课的示例句子3。",
+          "chinese": "这是第41课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 41."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第41课的示例句子4。",
+          "chinese": "这是第41课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 41."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson41.mp3",
+      "audio_filename": "lesson41.mp3"
+    },
+    {
+      "lesson_number": 42,
+      "title": "第42课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第42课的示例句子1。",
+          "chinese": "这是第42课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 42."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第42课的示例句子2。",
+          "chinese": "这是第42课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 42."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson42.mp3",
+      "audio_filename": "lesson42.mp3"
+    },
+    {
+      "lesson_number": 43,
+      "title": "第43课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第43课的示例句子1。",
+          "chinese": "这是第43课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 43."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第43课的示例句子2。",
+          "chinese": "这是第43课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 43."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第43课的示例句子3。",
+          "chinese": "这是第43课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 43."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson43.mp3",
+      "audio_filename": "lesson43.mp3"
+    },
+    {
+      "lesson_number": 44,
+      "title": "第44课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第44课的示例句子1。",
+          "chinese": "这是第44课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 44."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第44课的示例句子2。",
+          "chinese": "这是第44课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 44."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第44课的示例句子3。",
+          "chinese": "这是第44课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 44."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第44课的示例句子4。",
+          "chinese": "这是第44课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 44."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson44.mp3",
+      "audio_filename": "lesson44.mp3"
+    },
+    {
+      "lesson_number": 45,
+      "title": "第45课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第45课的示例句子1。",
+          "chinese": "这是第45课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 45."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第45课的示例句子2。",
+          "chinese": "这是第45课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 45."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson45.mp3",
+      "audio_filename": "lesson45.mp3"
+    },
+    {
+      "lesson_number": 46,
+      "title": "第46课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第46课的示例句子1。",
+          "chinese": "这是第46课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 46."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第46课的示例句子2。",
+          "chinese": "这是第46课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 46."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第46课的示例句子3。",
+          "chinese": "这是第46课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 46."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson46.mp3",
+      "audio_filename": "lesson46.mp3"
+    },
+    {
+      "lesson_number": 47,
+      "title": "第47课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第47课的示例句子1。",
+          "chinese": "这是第47课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 47."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第47课的示例句子2。",
+          "chinese": "这是第47课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 47."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第47课的示例句子3。",
+          "chinese": "这是第47课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 47."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第47课的示例句子4。",
+          "chinese": "这是第47课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 47."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson47.mp3",
+      "audio_filename": "lesson47.mp3"
+    },
+    {
+      "lesson_number": 48,
+      "title": "第48课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第48课的示例句子1。",
+          "chinese": "这是第48课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 48."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第48课的示例句子2。",
+          "chinese": "这是第48课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 48."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson48.mp3",
+      "audio_filename": "lesson48.mp3"
+    },
+    {
+      "lesson_number": 49,
+      "title": "第49课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第49课的示例句子1。",
+          "chinese": "这是第49课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 49."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第49课的示例句子2。",
+          "chinese": "这是第49课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 49."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第49课的示例句子3。",
+          "chinese": "这是第49课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 49."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson49.mp3",
+      "audio_filename": "lesson49.mp3"
+    },
+    {
+      "lesson_number": 50,
+      "title": "第50课 会话练习",
+      "dialogues": [
+        {
+          "speaker": "A",
+          "japanese": "これは第50课的示例句子1。",
+          "chinese": "这是第50课的示例句子1。",
+          "english": "This is sample sentence 1 of lesson 50."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第50课的示例句子2。",
+          "chinese": "这是第50课的示例句子2。",
+          "english": "This is sample sentence 2 of lesson 50."
+        },
+        {
+          "speaker": "A",
+          "japanese": "これは第50课的示例句子3。",
+          "chinese": "这是第50课的示例句子3。",
+          "english": "This is sample sentence 3 of lesson 50."
+        },
+        {
+          "speaker": "B",
+          "japanese": "これは第50课的示例句子4。",
+          "chinese": "这是第50课的示例句子4。",
+          "english": "This is sample sentence 4 of lesson 50."
+        }
+      ],
+      "audio_url": "https://example.com/audio/minna1/lesson50.mp3",
+      "audio_filename": "lesson50.mp3"
+    }
+  ]
+}
