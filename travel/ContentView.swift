@@ -3317,6 +3317,10 @@ struct NewsCard: View {
 struct NewsDetailView: View {
     let newsItem: JapaneseNewsItem
     @Environment(\.dismiss) private var dismiss
+    @State private var scrollOffset: CGFloat = 0
+    @State private var isLiked = false
+    @State private var isCollected = false
+    @State private var likeCount = 0
 
     var categoryColor: Color {
         switch newsItem.category {
@@ -3332,128 +3336,221 @@ struct NewsDetailView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 0) {
-                    // 大图封面
-                    ZStack(alignment: .bottomLeading) {
-                        AsyncImage(url: URL(string: newsItem.imageUrl ?? "")) { phase in
-                            switch phase {
-                            case .empty:
-                                Rectangle()
-                                    .fill(
-                                        LinearGradient(
-                                            colors: [Color(.systemGray5), Color(.systemGray6)],
-                                            startPoint: .topLeading,
-                                            endPoint: .bottomTrailing
+            ZStack(alignment: .bottom) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 0) {
+                        // 封面图片
+                        ZStack(alignment: .topLeading) {
+                            AsyncImage(url: URL(string: newsItem.imageUrl ?? "")) { phase in
+                                switch phase {
+                                case .empty:
+                                    Rectangle()
+                                        .fill(
+                                            LinearGradient(
+                                                colors: [Color(.systemGray5), Color(.systemGray6)],
+                                                startPoint: .topLeading,
+                                                endPoint: .bottomTrailing
+                                            )
                                         )
-                                    )
-                                    .frame(height: 280)
-                            case .success(let image):
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(height: 280)
-                            case .failure:
-                                Rectangle()
-                                    .fill(
-                                        LinearGradient(
-                                            colors: [Color(.systemGray5), Color(.systemGray6)],
-                                            startPoint: .topLeading,
-                                            endPoint: .bottomTrailing
+                                        .frame(height: 320)
+                                case .success(let image):
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(height: 320)
+                                case .failure:
+                                    Rectangle()
+                                        .fill(
+                                            LinearGradient(
+                                                colors: [Color(.systemGray5), Color(.systemGray6)],
+                                                startPoint: .topLeading,
+                                                endPoint: .bottomTrailing
+                                            )
                                         )
-                                    )
-                                    .frame(height: 280)
-                                    .overlay {
-                                        Image(systemName: "newspaper.fill")
-                                            .font(.system(size: 70))
-                                            .foregroundColor(.gray.opacity(0.4))
-                                    }
-                            @unknown default:
-                                EmptyView()
+                                        .frame(height: 320)
+                                        .overlay {
+                                            Image(systemName: "newspaper.fill")
+                                                .font(.system(size: 70))
+                                                .foregroundColor(.gray.opacity(0.4))
+                                        }
+                                @unknown default:
+                                    EmptyView()
+                                }
                             }
+
+                            // 返回按钮
+                            Button {
+                                dismiss()
+                            } label: {
+                                Image(systemName: "xmark")
+                                    .font(.system(size: 20, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .frame(width: 36, height: 36)
+                                    .background(
+                                        Circle()
+                                            .fill(.ultraThinMaterial)
+                                            .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 2)
+                                    )
+                            }
+                            .padding(.leading, 16)
+                            .padding(.top, 16)
                         }
 
-                        // 渐变遮罩
-                        VStack {
-                            Spacer()
-                            LinearGradient(
-                                colors: [.clear, .black.opacity(0.7)],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                            .frame(height: 120)
-                        }
+                        // 内容卡片
+                        VStack(alignment: .leading, spacing: 24) {
+                            // 顶部信息
+                            VStack(alignment: .leading, spacing: 12) {
+                                // 分类标签
+                                Text(newsItem.category)
+                                    .font(.system(size: 13, weight: .semibold))
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 6)
+                                    .background(categoryColor)
+                                    .clipShape(Capsule())
 
-                        // 叠加信息
-                        VStack(alignment: .leading, spacing: 8) {
-                            // 分类标签
-                            Text(newsItem.category)
-                                .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 14)
-                                .padding(.vertical, 6)
-                                .background(categoryColor)
-                                .clipShape(Capsule())
-                                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
+                                // 标题
+                                Text(newsItem.title)
+                                    .font(.system(size: 22, weight: .bold))
+                                    .lineSpacing(4)
+                                    .foregroundColor(.primary)
 
-                            // 标题
-                            Text(newsItem.title)
-                                .font(.system(size: 24, weight: .bold))
-                                .foregroundColor(.white)
-                                .lineSpacing(4)
-                                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+                                // 作者和时间
+                                HStack(spacing: 16) {
+                                    HStack(spacing: 6) {
+                                        Circle()
+                                            .fill(categoryColor)
+                                            .frame(width: 8, height: 8)
+
+                                        Text(newsItem.source)
+                                            .font(.system(size: 13))
+                                            .foregroundColor(.secondary)
+                                    }
+
+                                    HStack(spacing: 4) {
+                                        Image(systemName: "clock")
+                                            .font(.system(size: 12))
+                                        Text(newsItem.publishedDate)
+                                            .font(.system(size: 13))
+                                            .foregroundColor(.secondary)
+                                    }
+
+                                    Spacer()
+                                }
+                            }
+
+                            Divider()
+
+                            // 正文内容
+                            VStack(alignment: .leading, spacing: 20) {
+                                Text(newsItem.content)
+                                    .font(.system(size: 16))
+                                    .lineSpacing(10)
+                                    .foregroundColor(.primary)
+                            }
                         }
                         .padding(20)
+                        .background(Color(.systemBackground))
+                        .offset(y: -20)
                     }
+                }
+                .background(Color(.systemGray6))
+                .navigationBarHidden(true)
 
-                    // 内容区域
-                    VStack(alignment: .leading, spacing: 20) {
-                        // 元信息
-                        HStack(spacing: 20) {
-                            HStack(spacing: 6) {
-                                Image(systemName: "building.2.fill")
-                                    .foregroundColor(.secondary)
-                                Text(newsItem.source)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                            }
+                // 底部操作栏
+                VStack(spacing: 0) {
+                    Divider()
 
-                            HStack(spacing: 6) {
-                                Image(systemName: "clock.fill")
-                                    .foregroundColor(.secondary)
-                                Text(newsItem.publishedDate)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
+                    HStack(spacing: 0) {
+                        // 评论
+                        Button {
+                            // 评论功能
+                        } label: {
+                            VStack(spacing: 4) {
+                                Image(systemName: "bubble.left")
+                                    .font(.system(size: 22))
+
+                                Text("评论")
+                                    .font(.system(size: 11))
+                                    .fontWeight(.medium)
                             }
+                            .foregroundColor(.secondary)
+                            .frame(maxWidth: .infinity)
                         }
 
                         Divider()
+                            .frame(height: 40)
 
-                        // 正文
-                        VStack(alignment: .leading, spacing: 16) {
-                            Text(newsItem.content)
-                                .font(.system(size: 16))
-                                .lineSpacing(8)
-                                .foregroundColor(.primary)
+                        // 点赞
+                        Button {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                                isLiked.toggle()
+                                likeCount += isLiked ? 1 : -1
+                            }
+                        } label: {
+                            VStack(spacing: 4) {
+                                Image(systemName: isLiked ? "heart.fill" : "heart")
+                                    .font(.system(size: 22))
+                                    .foregroundColor(isLiked ? .red : .secondary)
+
+                                Text("\(likeCount)")
+                                    .font(.system(size: 11))
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.secondary)
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+
+                        Divider()
+                            .frame(height: 40)
+
+                        // 收藏
+                        Button {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                                isCollected.toggle()
+                            }
+                        } label: {
+                            VStack(spacing: 4) {
+                                Image(systemName: isCollected ? "star.fill" : "star")
+                                    .font(.system(size: 22))
+                                    .foregroundColor(isCollected ? .orange : .secondary)
+
+                                Text("收藏")
+                                    .font(.system(size: 11))
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.secondary)
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+
+                        Divider()
+                            .frame(height: 40)
+
+                        // 分享
+                        Button {
+                            // 分享功能
+                        } label: {
+                            VStack(spacing: 4) {
+                                Image(systemName: "square.and.arrow.up")
+                                    .font(.system(size: 22))
+
+                                Text("分享")
+                                    .font(.system(size: 11))
+                                    .fontWeight(.medium)
+                            }
+                            .foregroundColor(.secondary)
+                            .frame(maxWidth: .infinity)
                         }
                     }
-                    .padding(24)
+                    .frame(height: 56)
                     .background(Color(.systemBackground))
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.title2)
-                            .foregroundColor(.secondary)
-                    }
-                }
-            }
+        }
+        .presentationBackground(Color(.systemGray6))
+        .presentationDragIndicator(.visible)
+        .onAppear {
+            likeCount = Int.random(in: 50...500)
         }
     }
 }
