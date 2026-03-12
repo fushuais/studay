@@ -31,6 +31,12 @@ struct ContentView: View {
                     Label("学习", systemImage: "book.fill")
                 }
                 .tag(2)
+
+            NewsReadingView()
+                .tabItem {
+                    Label("阅读", systemImage: "newspaper.fill")
+                }
+                .tag(3)
         }
         .accentColor(.orange)
     }
@@ -3002,6 +3008,341 @@ final class MinnaConversationStore: ObservableObject {
             print("✓ 大家的日本语会话数据加载成功: \(self.data?.lessons.count ?? 0) 课")
         } catch {
             print("❌ 加载大家的日本语会话数据失败: \(error)")
+        }
+    }
+}
+
+// MARK: - 日本新闻阅读功能
+
+struct JapaneseNewsItem: Identifiable, Codable {
+    var id: UUID = UUID()
+    let title: String
+    let summary: String
+    let content: String
+    let imageUrl: String?
+    let source: String
+    let publishedDate: String
+    let category: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, title, summary, content, imageUrl, source, publishedDate, category
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = UUID()
+        title = try container.decode(String.self, forKey: .title)
+        summary = try container.decode(String.self, forKey: .summary)
+        content = try container.decode(String.self, forKey: .content)
+        imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl)
+        source = try container.decode(String.self, forKey: .source)
+        publishedDate = try container.decode(String.self, forKey: .publishedDate)
+        category = try container.decode(String.self, forKey: .category)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(title, forKey: .title)
+        try container.encode(summary, forKey: .summary)
+        try container.encode(content, forKey: .content)
+        try container.encode(imageUrl, forKey: .imageUrl)
+        try container.encode(source, forKey: .source)
+        try container.encode(publishedDate, forKey: .publishedDate)
+        try container.encode(category, forKey: .category)
+    }
+}
+
+struct JapaneseNewsData: Codable {
+    let meta: NewsMeta
+    let news: [JapaneseNewsItem]
+}
+
+struct NewsMeta: Codable {
+    let lastUpdated: String
+    let source: String
+    let totalCount: Int
+}
+
+@MainActor
+final class JapaneseNewsStore: ObservableObject {
+    static let shared = JapaneseNewsStore()
+    @Published var data: JapaneseNewsData?
+
+    private init() {
+        load()
+    }
+
+    private func load() {
+        guard let url = Bundle.main.url(forResource: "japanese_news", withExtension: "json") else {
+            print("❌ 未找到 japanese_news.json")
+            return
+        }
+
+        do {
+            let data = try Data(contentsOf: url)
+            self.data = try JSONDecoder().decode(JapaneseNewsData.self, from: data)
+            print("✓ 日本新闻数据加载成功: \(self.data?.news.count ?? 0) 条")
+        } catch {
+            print("❌ 加载日本新闻数据失败: \(error)")
+        }
+    }
+}
+
+struct NewsReadingView: View {
+    @StateObject private var newsStore = JapaneseNewsStore.shared
+    @State private var selectedCategory = "全部"
+    @State private var selectedNews: JapaneseNewsItem?
+
+    private let categories = ["全部", "政治", "经济", "社会", "科技", "文化", "体育"]
+
+    private var filteredNews: [JapaneseNewsItem] {
+        guard let news = newsStore.data?.news else { return [] }
+        if selectedCategory == "全部" {
+            return news
+        }
+        return news.filter { $0.category == selectedCategory }
+    }
+
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 0) {
+                // 顶部分类选择器
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(categories, id: \.self) { category in
+                            Button {
+                                withAnimation {
+                                    selectedCategory = category
+                                }
+                            } label: {
+                                Text(category)
+                                    .font(.subheadline)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(selectedCategory == category ? .white : .primary)
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 8)
+                                    .background(selectedCategory == category ? Color.blue : Color(.systemGray5))
+                                    .clipShape(Capsule())
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
+                }
+                .background(Color(.systemBackground))
+
+                // 瀑布流新闻列表
+                ScrollView {
+                    LazyVGrid(
+                        columns: [
+                            GridItem(.flexible(), spacing: 12),
+                            GridItem(.flexible(), spacing: 12)
+                        ],
+                        spacing: 16
+                    ) {
+                        ForEach(filteredNews) { item in
+                            NewsCard(item: item)
+                                .onTapGesture {
+                                    selectedNews = item
+                                }
+                        }
+                    }
+                    .padding(16)
+                }
+            }
+            .navigationTitle("日本新闻")
+            .navigationBarTitleDisplayMode(.large)
+            .sheet(item: $selectedNews) { item in
+                NewsDetailView(newsItem: item)
+                    .presentationDetents([.medium, .large])
+                    .presentationDragIndicator(.visible)
+            }
+        }
+    }
+}
+
+struct NewsCard: View {
+    let item: JapaneseNewsItem
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // 图片
+            AsyncImage(url: URL(string: item.imageUrl ?? "")) { phase in
+                switch phase {
+                case .empty:
+                    Rectangle()
+                        .fill(Color(.systemGray5))
+                        .frame(height: 160)
+                        .overlay {
+                            ProgressView()
+                                .tint(.gray)
+                        }
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: 160)
+                        .clipped()
+                case .failure:
+                    Rectangle()
+                        .fill(Color(.systemGray5))
+                        .frame(height: 160)
+                        .overlay {
+                            Image(systemName: "newspaper")
+                                .font(.system(size: 40))
+                                .foregroundColor(.gray)
+                        }
+                @unknown default:
+                    EmptyView()
+                }
+            }
+
+            // 分类标签
+            Text(item.category)
+                .font(.caption)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 4)
+                .background(Color.blue)
+                .clipShape(Capsule())
+
+            // 标题
+            Text(item.title)
+                .font(.headline)
+                .fontWeight(.semibold)
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
+
+            // 摘要
+            Text(item.summary)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .lineLimit(3)
+                .multilineTextAlignment(.leading)
+
+            // 来源和时间
+            HStack {
+                Text(item.source)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+
+                Spacer()
+
+                Text(item.publishedDate)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+        }
+        .padding(12)
+        .background(Color(.systemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 4)
+    }
+}
+
+struct NewsDetailView: View {
+    let newsItem: JapaneseNewsItem
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    // 图片
+                    AsyncImage(url: URL(string: newsItem.imageUrl ?? "")) { phase in
+                        switch phase {
+                        case .empty:
+                            Rectangle()
+                                .fill(Color(.systemGray5))
+                                .frame(height: 250)
+                                .overlay {
+                                    ProgressView()
+                                        .tint(.gray)
+                                }
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height: 250)
+                                .clipped()
+                        case .failure:
+                            Rectangle()
+                                .fill(Color(.systemGray5))
+                                .frame(height: 250)
+                                .overlay {
+                                    Image(systemName: "newspaper")
+                                        .font(.system(size: 60))
+                                        .foregroundColor(.gray)
+                                }
+                        @unknown default:
+                            EmptyView()
+                        }
+                    }
+
+                    // 内容
+                    VStack(alignment: .leading, spacing: 16) {
+                        // 分类标签
+                        Text(newsItem.category)
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 6)
+                            .background(Color.blue)
+                            .clipShape(Capsule())
+
+                        // 标题
+                        Text(newsItem.title)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .lineSpacing(2)
+
+                        // 来源和时间
+                        HStack(spacing: 12) {
+                            Image(systemName: "building.2")
+                                .foregroundColor(.secondary)
+
+                            Text(newsItem.source)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+
+                            Spacer()
+
+                            Image(systemName: "clock")
+                                .foregroundColor(.secondary)
+
+                            Text(newsItem.publishedDate)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+
+                        Divider()
+
+                        // 正文内容
+                        Text(newsItem.content)
+                            .font(.body)
+                            .lineSpacing(6)
+                            .multilineTextAlignment(.leading)
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 20)
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title2)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
         }
     }
 }
