@@ -3166,80 +3166,151 @@ struct NewsReadingView: View {
 struct NewsCard: View {
     let item: JapaneseNewsItem
 
+    var categoryColor: Color {
+        switch item.category {
+        case "政治": return .red
+        case "经济": return .orange
+        case "社会": return .blue
+        case "科技": return .purple
+        case "文化": return .pink
+        case "体育": return .green
+        default: return .gray
+        }
+    }
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            // 图片
-            AsyncImage(url: URL(string: item.imageUrl ?? "")) { phase in
-                switch phase {
-                case .empty:
-                    Rectangle()
-                        .fill(Color(.systemGray5))
-                        .frame(height: 160)
-                        .overlay {
-                            ProgressView()
-                                .tint(.gray)
-                        }
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 160)
-                        .clipped()
-                case .failure:
-                    Rectangle()
-                        .fill(Color(.systemGray5))
-                        .frame(height: 160)
-                        .overlay {
-                            Image(systemName: "newspaper")
-                                .font(.system(size: 40))
-                                .foregroundColor(.gray)
-                        }
-                @unknown default:
-                    EmptyView()
+        VStack(alignment: .leading, spacing: 0) {
+            // 图片 - 占据大部分卡片空间
+            ZStack {
+                AsyncImage(url: URL(string: item.imageUrl ?? "")) { phase in
+                    switch phase {
+                    case .empty:
+                        Rectangle()
+                            .fill(
+                                LinearGradient(
+                                    colors: [Color(.systemGray5), Color(.systemGray6)],
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                            )
+                            .frame(height: 200)
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 200)
+                    case .failure:
+                        Rectangle()
+                            .fill(
+                                LinearGradient(
+                                    colors: [Color(.systemGray5), Color(.systemGray6)],
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                            )
+                            .frame(height: 200)
+                            .overlay {
+                                Image(systemName: "newspaper.fill")
+                                    .font(.system(size: 50))
+                                    .foregroundColor(.gray.opacity(0.4))
+                            }
+                    @unknown default:
+                        EmptyView()
+                    }
+                }
+
+                // 分类标签 - 叠加在图片上
+                VStack {
+                    HStack {
+                        Text(item.category)
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 6)
+                            .background(categoryColor)
+                            .clipShape(Capsule())
+                            .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
+
+                        Spacer()
+                    }
+
+                    Spacer()
+                }
+                .padding(12)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
+            )
+
+            // 内容区域
+            VStack(alignment: .leading, spacing: 8) {
+                // 标题
+                Text(item.title)
+                    .font(.system(size: 15, weight: .bold))
+                    .lineLimit(2)
+                    .lineSpacing(2)
+                    .foregroundColor(.primary)
+
+                // 摘要
+                Text(item.summary)
+                    .font(.system(size: 13))
+                    .lineLimit(2)
+                    .lineSpacing(2)
+                    .foregroundColor(.secondary)
+
+                // 底部信息
+                HStack(spacing: 8) {
+                    // 来源
+                    HStack(spacing: 4) {
+                        Image(systemName: "building.2.fill")
+                            .font(.system(size: 10))
+                        Text(item.source)
+                            .font(.system(size: 11))
+                    }
+                    .foregroundColor(.secondary)
+
+                    Spacer()
+
+                    // 时间
+                    HStack(spacing: 4) {
+                        Image(systemName: "clock.fill")
+                            .font(.system(size: 10))
+                        Text(formatDate(item.publishedDate))
+                            .font(.system(size: 11))
+                    }
+                    .foregroundColor(.secondary)
                 }
             }
-
-            // 分类标签
-            Text(item.category)
-                .font(.caption)
-                .fontWeight(.semibold)
-                .foregroundColor(.white)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
-                .background(Color.blue)
-                .clipShape(Capsule())
-
-            // 标题
-            Text(item.title)
-                .font(.headline)
-                .fontWeight(.semibold)
-                .lineLimit(2)
-                .multilineTextAlignment(.leading)
-
-            // 摘要
-            Text(item.summary)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .lineLimit(3)
-                .multilineTextAlignment(.leading)
-
-            // 来源和时间
-            HStack {
-                Text(item.source)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-
-                Spacer()
-
-                Text(item.publishedDate)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
+            .padding(12)
         }
-        .padding(12)
         .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 4)
+        .shadow(color: .black.opacity(0.08), radius: 12, x: 0, y: 4)
+    }
+
+    private func formatDate(_ dateString: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        if let date = formatter.date(from: dateString) {
+            let now = Date()
+            let calendar = Calendar.current
+            let days = calendar.dateComponents([.day], from: date, to: now).day ?? 0
+
+            if days == 0 {
+                return "今天"
+            } else if days == 1 {
+                return "昨天"
+            } else if days < 7 {
+                return "\(days)天前"
+            } else {
+                formatter.dateFormat = "MM-dd"
+                return formatter.string(from: date)
+            }
+        }
+        return dateString
     }
 }
 
@@ -3247,55 +3318,145 @@ struct NewsDetailView: View {
     let newsItem: JapaneseNewsItem
     @Environment(\.dismiss) private var dismiss
 
+    var categoryColor: Color {
+        switch newsItem.category {
+        case "政治": return .red
+        case "经济": return .orange
+        case "社会": return .blue
+        case "科技": return .purple
+        case "文化": return .pink
+        case "体育": return .green
+        default: return .gray
+        }
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    // 图片
-                    AsyncImage(url: URL(string: newsItem.imageUrl ?? "")) { phase in
-                        switch phase {
-                        case .empty:
-                            Rectangle()
-                                .fill(Color(.systemGray5))
-                                .frame(height: 250)
-                                .overlay {
-                                    ProgressView()
-                                        .tint(.gray)
-                                }
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(height: 250)
-                                .clipped()
-                        case .failure:
-                            Rectangle()
-                                .fill(Color(.systemGray5))
-                                .frame(height: 250)
-                                .overlay {
-                                    Image(systemName: "newspaper")
-                                        .font(.system(size: 60))
-                                        .foregroundColor(.gray)
-                                }
-                        @unknown default:
-                            EmptyView()
+                VStack(alignment: .leading, spacing: 0) {
+                    // 大图封面
+                    ZStack(alignment: .bottomLeading) {
+                        AsyncImage(url: URL(string: newsItem.imageUrl ?? "")) { phase in
+                            switch phase {
+                            case .empty:
+                                Rectangle()
+                                    .fill(
+                                        LinearGradient(
+                                            colors: [Color(.systemGray5), Color(.systemGray6)],
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
+                                    .frame(height: 280)
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(height: 280)
+                            case .failure:
+                                Rectangle()
+                                    .fill(
+                                        LinearGradient(
+                                            colors: [Color(.systemGray5), Color(.systemGray6)],
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
+                                    .frame(height: 280)
+                                    .overlay {
+                                        Image(systemName: "newspaper.fill")
+                                            .font(.system(size: 70))
+                                            .foregroundColor(.gray.opacity(0.4))
+                                    }
+                            @unknown default:
+                                EmptyView()
+                            }
                         }
+
+                        // 渐变遮罩
+                        VStack {
+                            Spacer()
+                            LinearGradient(
+                                colors: [.clear, .black.opacity(0.7)],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                            .frame(height: 120)
+                        }
+
+                        // 叠加信息
+                        VStack(alignment: .leading, spacing: 8) {
+                            // 分类标签
+                            Text(newsItem.category)
+                                .font(.caption)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 14)
+                                .padding(.vertical, 6)
+                                .background(categoryColor)
+                                .clipShape(Capsule())
+                                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
+
+                            // 标题
+                            Text(newsItem.title)
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundColor(.white)
+                                .lineSpacing(4)
+                                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+                        }
+                        .padding(20)
                     }
 
-                    // 内容
-                    VStack(alignment: .leading, spacing: 16) {
-                        // 分类标签
-                        Text(newsItem.category)
-                            .font(.caption)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
-                            .background(Color.blue)
-                            .clipShape(Capsule())
+                    // 内容区域
+                    VStack(alignment: .leading, spacing: 20) {
+                        // 元信息
+                        HStack(spacing: 20) {
+                            HStack(spacing: 6) {
+                                Image(systemName: "building.2.fill")
+                                    .foregroundColor(.secondary)
+                                Text(newsItem.source)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
 
-                        // 标题
-                        Text(newsItem.title)
+                            HStack(spacing: 6) {
+                                Image(systemName: "clock.fill")
+                                    .foregroundColor(.secondary)
+                                Text(newsItem.publishedDate)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+
+                        Divider()
+
+                        // 正文
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text(newsItem.content)
+                                .font(.system(size: 16))
+                                .lineSpacing(8)
+                                .foregroundColor(.primary)
+                        }
+                    }
+                    .padding(24)
+                    .background(Color(.systemBackground))
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title2)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+        }
+    }
+}
                             .font(.title)
                             .fontWeight(.bold)
                             .lineSpacing(2)
