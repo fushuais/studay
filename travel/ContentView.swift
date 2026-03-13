@@ -3289,46 +3289,64 @@ struct NewsCard: View {
                 AsyncImage(url: URL(string: item.imageUrl ?? "")) { phase in
                     switch phase {
                     case .empty:
-                        Rectangle()
-                            .fill(
-                                LinearGradient(
-                                    colors: [Color(.systemGray5), Color(.systemGray6)],
-                                    startPoint: .top,
-                                    endPoint: .bottom
+                        ZStack {
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(
+                                        colors: [
+                                            Color(red: 0.95, green: 0.95, blue: 0.97),
+                                            Color(red: 0.9, green: 0.9, blue: 0.92)
+                                        ],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
                                 )
-                            )
-                            .frame(height: 220)
+                                .frame(height: 200)
+                            ProgressView()
+                                .scaleEffect(0.8)
+                                .tint(.gray.opacity(0.5))
+                        }
                     case .success(let image):
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(height: 220)
+                            .frame(height: 200)
+                            .clipped()
                     case .failure:
-                        Rectangle()
-                            .fill(
-                                LinearGradient(
-                                    colors: [Color(.systemGray5), Color(.systemGray6)],
-                                    startPoint: .top,
-                                    endPoint: .bottom
+                        ZStack {
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(
+                                        colors: [
+                                            Color(red: 0.95, green: 0.95, blue: 0.97),
+                                            Color(red: 0.9, green: 0.9, blue: 0.92)
+                                        ],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
                                 )
-                            )
-                            .frame(height: 220)
-                            .overlay {
-                                Image(systemName: "newspaper.fill")
-                                    .font(.system(size: 50))
-                                    .foregroundColor(.gray.opacity(0.3))
+                                .frame(height: 200)
+                            VStack(spacing: 8) {
+                                Image(systemName: "photo.badge.exclamationmark")
+                                    .font(.system(size: 40))
+                                    .foregroundColor(.gray.opacity(0.4))
+                                Text("图片加载失败")
+                                    .font(.caption)
+                                    .foregroundColor(.gray.opacity(0.5))
                             }
+                        }
                     @unknown default:
                         EmptyView()
                     }
                 }
 
-                // 渐变遮罩 - 提升文字可读性
+                // 渐变遮罩 - 提升文字可读性，更加细腻
                 LinearGradient(
                     gradient: Gradient(colors: [
-                        Color.black.opacity(0.1),
-                        Color.black.opacity(0.3),
-                        Color.black.opacity(0.6)
+                        Color.black.opacity(0),
+                        Color.black.opacity(0.15),
+                        Color.black.opacity(0.35),
+                        Color.black.opacity(0.65)
                     ]),
                     startPoint: .top,
                     endPoint: .bottom
@@ -3339,21 +3357,23 @@ struct NewsCard: View {
                 VStack {
                     HStack {
                         Text(item.category)
-                            .font(.caption2)
-                            .fontWeight(.bold)
+                            .font(.system(size: 10, weight: .bold))
                             .foregroundColor(.white)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
-                            .background(categoryColor)
-                            .clipShape(Capsule())
-                            .shadow(color: .black.opacity(0.2), radius: 3, x: 0, y: 1)
+                            .padding(.horizontal, 9)
+                            .padding(.vertical, 4)
+                            .background(
+                                Capsule()
+                                    .fill(categoryColor)
+                                    .shadow(color: categoryColor.opacity(0.5), radius: 4, x: 0, y: 2)
+                            )
 
                         Spacer()
 
                         Image(systemName: "heart")
-                            .font(.system(size: 14))
+                            .font(.system(size: 13))
+                            .fontWeight(.medium)
                             .foregroundColor(.white)
-                            .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+                            .shadow(color: .black.opacity(0.4), radius: 3, x: 0, y: 1)
                     }
 
                     Spacer()
@@ -3364,36 +3384,47 @@ struct NewsCard: View {
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.white)
                             .lineLimit(2)
-                            .shadow(color: .black.opacity(0.5), radius: 3, x: 0, y: 1)
+                            .multilineTextAlignment(.leading)
+                            .shadow(color: .black.opacity(0.6), radius: 4, x: 0, y: 2)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .padding(10)
+                .padding(12)
             }
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
             .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color.white.opacity(0.15), lineWidth: 0.5)
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(0.2),
+                                Color.white.opacity(0.05)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: 1
+                    )
             )
 
             // 内容区域
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 8) {
                 // 摘要 - 更简洁
                 Text(item.summary)
                     .font(.system(size: 12))
                     .lineLimit(2)
-                    .lineSpacing(2)
-                    .foregroundColor(.secondary)
+                    .lineSpacing(3)
+                    .foregroundColor(.primary.opacity(0.8))
 
-                // 底部信息条 - 仿小红书风格
-                HStack(spacing: 4) {
+                // 底部信息条 - 仿小红书风格，更精致
+                HStack(spacing: 6) {
                     // 来源图标
                     Image(systemName: "building.2")
-                        .font(.system(size: 9))
+                        .font(.system(size: 9, weight: .medium))
                         .foregroundColor(.secondary)
 
                     Text(item.source)
-                        .font(.system(size: 10))
+                        .font(.system(size: 11, weight: .medium))
                         .foregroundColor(.secondary)
                         .lineLimit(1)
 
@@ -3401,25 +3432,25 @@ struct NewsCard: View {
 
                     // 时间
                     Text(formatDate(item.publishedDate))
-                        .font(.system(size: 10))
+                        .font(.system(size: 11))
                         .foregroundColor(.secondary)
 
                     // 点赞数占位
-                    HStack(spacing: 2) {
+                    HStack(spacing: 3) {
                         Image(systemName: "hand.thumbsup.fill")
-                            .font(.system(size: 9))
-                        Text("\(Int.random(in: 50...500))")
                             .font(.system(size: 10))
+                        Text("\(Int.random(in: 50...500))")
+                            .font(.system(size: 11, weight: .medium))
                     }
                     .foregroundColor(.secondary)
                 }
-                .padding(.top, 2)
+                .padding(.top, 4)
             }
-            .padding(10)
+            .padding(12)
         }
         .background(Color(.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .shadow(color: .black.opacity(0.06), radius: 8, x: 0, y: 3)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .shadow(color: .black.opacity(0.08), radius: 6, x: 0, y: 2)
     }
 
     private func formatDate(_ dateString: String) -> String {
@@ -3475,121 +3506,151 @@ struct NewsDetailView: View {
                             AsyncImage(url: URL(string: newsItem.imageUrl ?? "")) { phase in
                                 switch phase {
                                 case .empty:
-                                    Rectangle()
-                                        .fill(
-                                            LinearGradient(
-                                                colors: [Color(.systemGray5), Color(.systemGray6)],
-                                                startPoint: .topLeading,
-                                                endPoint: .bottomTrailing
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(
+                                                LinearGradient(
+                                                    colors: [
+                                                        Color(red: 0.95, green: 0.95, blue: 0.97),
+                                                        Color(red: 0.9, green: 0.9, blue: 0.92)
+                                                    ],
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                )
                                             )
-                                        )
-                                        .frame(height: 280)
+                                            .frame(height: 260)
+                                        ProgressView()
+                                            .scaleEffect(1.2)
+                                            .tint(.gray.opacity(0.6))
+                                    }
                                 case .success(let image):
                                     image
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(height: 280)
+                                        .frame(height: 260)
+                                        .clipped()
                                 case .failure:
-                                    Rectangle()
-                                        .fill(
-                                            LinearGradient(
-                                                colors: [Color(.systemGray5), Color(.systemGray6)],
-                                                startPoint: .topLeading,
-                                                endPoint: .bottomTrailing
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(
+                                                LinearGradient(
+                                                    colors: [
+                                                        Color(red: 0.95, green: 0.95, blue: 0.97),
+                                                        Color(red: 0.9, green: 0.9, blue: 0.92)
+                                                    ],
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                )
                                             )
-                                        )
-                                        .frame(height: 280)
-                                        .overlay {
-                                            Image(systemName: "newspaper.fill")
-                                                .font(.system(size: 70))
-                                                .foregroundColor(.gray.opacity(0.3))
+                                            .frame(height: 260)
+                                        VStack(spacing: 12) {
+                                            Image(systemName: "photo.badge.exclamationmark")
+                                                .font(.system(size: 50))
+                                                .foregroundColor(.gray.opacity(0.4))
+                                            Text("图片加载失败")
+                                                .font(.subheadline)
+                                                .foregroundColor(.gray.opacity(0.5))
                                         }
+                                    }
                                 @unknown default:
                                     EmptyView()
                                 }
                             }
-                            // 渐变遮罩
+
+                            // 更细腻的渐变遮罩
                             LinearGradient(
                                 gradient: Gradient(colors: [
                                     Color.black.opacity(0),
-                                    Color.black.opacity(0.1),
-                                    Color.black.opacity(0.4)
+                                    Color.black.opacity(0.05),
+                                    Color.black.opacity(0.2),
+                                    Color.black.opacity(0.5)
                                 ]),
                                 startPoint: .top,
                                 endPoint: .bottom
                             )
                             .allowsHitTesting(false)
 
-                            // 返回按钮
+                            // 返回按钮 - 更精致的设计
                             Button {
                                 dismiss()
                             } label: {
                                 Image(systemName: "xmark")
-                                    .font(.system(size: 18, weight: .bold))
+                                    .font(.system(size: 16, weight: .bold))
                                     .foregroundColor(.white)
-                                    .frame(width: 32, height: 32)
+                                    .frame(width: 36, height: 36)
                                     .background(
                                         Circle()
                                             .fill(.ultraThinMaterial)
-                                            .shadow(color: .black.opacity(0.25), radius: 6, x: 0, y: 2)
+                                            .shadow(color: .black.opacity(0.35), radius: 8, x: 0, y: 3)
                                     )
                             }
-                            .padding(.leading, 14)
-                            .padding(.top, 14)
+                            .padding(.leading, 16)
+                            .padding(.top, 16)
 
-                            // 底部标题叠加
+                            // 底部标题叠加 - 更好的排版
                             VStack {
                                 Spacer()
-                                VStack(alignment: .leading, spacing: 8) {
-                                    HStack(spacing: 8) {
+                                VStack(alignment: .leading, spacing: 10) {
+                                    HStack(spacing: 10) {
                                         Text(newsItem.category)
                                             .font(.system(size: 11, weight: .bold))
                                             .foregroundColor(.white)
-                                            .padding(.horizontal, 10)
-                                            .padding(.vertical, 4)
-                                            .background(categoryColor)
-                                            .clipShape(Capsule())
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 5)
+                                            .background(
+                                                Capsule()
+                                                    .fill(categoryColor)
+                                                    .shadow(color: categoryColor.opacity(0.6), radius: 6, x: 0, y: 2)
+                                            )
                                         Spacer()
                                     }
                                     Text(newsItem.title)
-                                        .font(.system(size: 20, weight: .bold))
+                                        .font(.system(size: 22, weight: .bold))
                                         .foregroundColor(.white)
-                                        .lineSpacing(4)
-                                        .shadow(color: .black.opacity(0.5), radius: 4, x: 0, y: 2)
+                                        .lineSpacing(5)
+                                        .multilineTextAlignment(.leading)
+                                        .shadow(color: .black.opacity(0.7), radius: 6, x: 0, y: 3)
                                 }
-                                .padding(.horizontal, 16)
-                                .padding(.bottom, 20)
+                                .padding(.horizontal, 20)
+                                .padding(.bottom, 24)
                             }
                         }
 
                         // 内容卡片
-                        VStack(alignment: .leading, spacing: 20) {
-                            // 作者信息
-                            HStack(spacing: 12) {
+                        VStack(alignment: .leading, spacing: 24) {
+                            // 作者信息 - 更精致的设计
+                            HStack(spacing: 14) {
                                 // 来源图标
                                 Circle()
-                                    .fill(categoryColor)
-                                    .frame(width: 36, height: 36)
+                                    .fill(
+                                        LinearGradient(
+                                            colors: [categoryColor, categoryColor.opacity(0.8)],
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
+                                    .frame(width: 44, height: 44)
                                     .overlay {
                                         Image(systemName: "building.2.fill")
-                                            .font(.system(size: 16))
+                                            .font(.system(size: 18, weight: .medium))
                                             .foregroundColor(.white)
                                     }
+                                    .shadow(color: categoryColor.opacity(0.4), radius: 6, x: 0, y: 3)
 
-                                VStack(alignment: .leading, spacing: 2) {
+                                VStack(alignment: .leading, spacing: 4) {
                                     Text(newsItem.source)
-                                        .font(.system(size: 15, weight: .semibold))
+                                        .font(.system(size: 16, weight: .semibold))
                                         .foregroundColor(.primary)
-                                    HStack(spacing: 4) {
+                                    HStack(spacing: 6) {
                                         Image(systemName: "clock")
-                                            .font(.system(size: 11))
+                                            .font(.system(size: 11, weight: .medium))
                                         Text(formatDateDetail(newsItem.publishedDate))
-                                            .font(.system(size: 12))
+                                            .font(.system(size: 13))
                                         Text("·")
-                                            .font(.system(size: 12))
+                                            .font(.system(size: 13))
                                             .foregroundColor(.secondary)
                                         Text("\(Int.random(in: 200...2000)) 阅读")
-                                            .font(.system(size: 12))
+                                            .font(.system(size: 13))
                                             .foregroundColor(.secondary)
                                     }
                                     .foregroundColor(.secondary)
@@ -3597,127 +3658,139 @@ struct NewsDetailView: View {
 
                                 Spacer()
 
-                                // 关注按钮
+                                // 关注按钮 - 更精致
                                 Button {
                                     // 关注功能
                                 } label: {
                                     Text("关注")
-                                        .font(.system(size: 13, weight: .medium))
+                                        .font(.system(size: 14, weight: .semibold))
                                         .foregroundColor(.white)
-                                        .padding(.horizontal, 20)
-                                        .padding(.vertical, 8)
-                                        .background(categoryColor)
-                                        .clipShape(Capsule())
+                                        .padding(.horizontal, 22)
+                                        .padding(.vertical, 9)
+                                        .background(
+                                            Capsule()
+                                                .fill(categoryColor)
+                                                .shadow(color: categoryColor.opacity(0.5), radius: 4, x: 0, y: 2)
+                                        )
                                 }
                             }
-                            .padding(.horizontal, 4)
+                            .padding(.horizontal, 6)
 
                             Divider()
+                                .background(Color.secondary.opacity(0.3))
 
-                            // 正文内容
+                            // 正文内容 - 更好的排版
                             Text(newsItem.content)
-                                .font(.system(size: 16))
-                                .lineSpacing(8)
+                                .font(.system(size: 17))
+                                .lineSpacing(10)
                                 .foregroundColor(.primary)
                         }
-                        .padding(18)
+                        .padding(20)
                         .background(
-                            RoundedRectangle(cornerRadius: 16)
+                            RoundedRectangle(cornerRadius: 20)
                                 .fill(Color(.systemBackground))
                         )
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .offset(y: -16)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .shadow(color: .black.opacity(0.08), radius: 12, x: 0, y: -6)
+                        .offset(y: -20)
                     }
                 }
                 .background(Color(.systemGray6))
                 .navigationBarHidden(true)
 
-                // 底部操作栏
+                // 底部操作栏 - 更精致的设计
                 VStack(spacing: 0) {
                     Divider()
+                        .background(Color.secondary.opacity(0.3))
 
                     HStack(spacing: 0) {
                         // 评论
                         Button {
                             // 评论功能
                         } label: {
-                            VStack(spacing: 4) {
+                            VStack(spacing: 5) {
                                 Image(systemName: "bubble.left")
-                                    .font(.system(size: 22))
+                                    .font(.system(size: 23, weight: .medium))
 
                                 Text("评论")
-                                    .font(.system(size: 11))
-                                    .fontWeight(.medium)
+                                    .font(.system(size: 12, weight: .medium))
                             }
                             .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity)
+                            .contentShape(Rectangle())
                         }
 
-                        Divider()
-                            .frame(height: 40)
+                        Rectangle()
+                            .fill(Color.secondary.opacity(0.25))
+                            .frame(width: 1, height: 44)
 
-                        // 点赞
+                        // 点赞 - 增强动画效果
                         Button {
-                            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                            withAnimation(.spring(response: 0.35, dampingFraction: 0.6)) {
                                 isLiked.toggle()
                                 likeCount += isLiked ? 1 : -1
                             }
                         } label: {
-                            VStack(spacing: 4) {
+                            VStack(spacing: 5) {
                                 Image(systemName: isLiked ? "heart.fill" : "heart")
-                                    .font(.system(size: 22))
+                                    .font(.system(size: 24, weight: isLiked ? .semibold : .medium))
                                     .foregroundColor(isLiked ? .red : .secondary)
+                                    .symbolEffect(.bounce, value: isLiked)
 
                                 Text("\(likeCount)")
-                                    .font(.system(size: 11))
-                                    .fontWeight(.medium)
+                                    .font(.system(size: 12, weight: .medium))
                                     .foregroundColor(.secondary)
                             }
                             .frame(maxWidth: .infinity)
+                            .contentShape(Rectangle())
                         }
 
-                        Divider()
-                            .frame(height: 40)
+                        Rectangle()
+                            .fill(Color.secondary.opacity(0.25))
+                            .frame(width: 1, height: 44)
 
                         // 收藏
                         Button {
-                            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                            withAnimation(.spring(response: 0.35, dampingFraction: 0.6)) {
                                 isCollected.toggle()
                             }
                         } label: {
-                            VStack(spacing: 4) {
+                            VStack(spacing: 5) {
                                 Image(systemName: isCollected ? "star.fill" : "star")
-                                    .font(.system(size: 22))
+                                    .font(.system(size: 24, weight: isCollected ? .semibold : .medium))
                                     .foregroundColor(isCollected ? .orange : .secondary)
+                                    .symbolEffect(.bounce, value: isCollected)
 
                                 Text("收藏")
-                                    .font(.system(size: 11))
-                                    .fontWeight(.medium)
+                                    .font(.system(size: 12, weight: .medium))
                                     .foregroundColor(.secondary)
                             }
                             .frame(maxWidth: .infinity)
+                            .contentShape(Rectangle())
                         }
 
-                        Divider()
-                            .frame(height: 40)
+                        Rectangle()
+                            .fill(Color.secondary.opacity(0.25))
+                            .frame(width: 1, height: 44)
 
                         // 分享
                         Button {
                             // 分享功能
                         } label: {
-                            VStack(spacing: 4) {
+                            VStack(spacing: 5) {
                                 Image(systemName: "square.and.arrow.up")
-                                    .font(.system(size: 22))
+                                    .font(.system(size: 23, weight: .medium))
 
                                 Text("分享")
-                                    .font(.system(size: 11))
+                                    .font(.system(size: 12, weight: .medium))
                                     .fontWeight(.medium)
                             }
                             .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity)
+                            .contentShape(Rectangle())
                         }
                     }
-                    .frame(height: 56)
+                    .frame(height: 60)
                     .background(Color(.systemBackground))
                 }
             }
