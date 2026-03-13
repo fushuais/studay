@@ -3180,7 +3180,7 @@ struct NewsCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // 图片 - 占据大部分卡片空间
+            // 图片 - 采用小红书风格的瀑布流图片
             ZStack {
                 AsyncImage(url: URL(string: item.imageUrl ?? "")) { phase in
                     switch phase {
@@ -3193,12 +3193,12 @@ struct NewsCard: View {
                                     endPoint: .bottom
                                 )
                             )
-                            .frame(height: 200)
+                            .frame(height: 220)
                     case .success(let image):
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(height: 200)
+                            .frame(height: 220)
                     case .failure:
                         Rectangle()
                             .fill(
@@ -3208,87 +3208,114 @@ struct NewsCard: View {
                                     endPoint: .bottom
                                 )
                             )
-                            .frame(height: 200)
+                            .frame(height: 220)
                             .overlay {
                                 Image(systemName: "newspaper.fill")
                                     .font(.system(size: 50))
-                                    .foregroundColor(.gray.opacity(0.4))
+                                    .foregroundColor(.gray.opacity(0.3))
                             }
                     @unknown default:
                         EmptyView()
                     }
                 }
 
-                // 分类标签 - 叠加在图片上
+                // 渐变遮罩 - 提升文字可读性
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color.black.opacity(0.1),
+                        Color.black.opacity(0.3),
+                        Color.black.opacity(0.6)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .allowsHitTesting(false)
+
+                // 分类标签和收藏按钮 - 叠加在图片上
                 VStack {
                     HStack {
                         Text(item.category)
-                            .font(.caption)
+                            .font(.caption2)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 5)
                             .background(categoryColor)
                             .clipShape(Capsule())
-                            .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
+                            .shadow(color: .black.opacity(0.2), radius: 3, x: 0, y: 1)
 
                         Spacer()
+
+                        Image(systemName: "heart")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
                     }
 
                     Spacer()
+
+                    // 图片底部标题预览
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(item.title)
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(.white)
+                            .lineLimit(2)
+                            .shadow(color: .black.opacity(0.5), radius: 3, x: 0, y: 1)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .padding(12)
+                .padding(10)
             }
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                    .stroke(Color.white.opacity(0.15), lineWidth: 0.5)
             )
 
             // 内容区域
-            VStack(alignment: .leading, spacing: 8) {
-                // 标题
-                Text(item.title)
-                    .font(.system(size: 15, weight: .bold))
-                    .lineLimit(2)
-                    .lineSpacing(2)
-                    .foregroundColor(.primary)
-
-                // 摘要
+            VStack(alignment: .leading, spacing: 6) {
+                // 摘要 - 更简洁
                 Text(item.summary)
-                    .font(.system(size: 13))
+                    .font(.system(size: 12))
                     .lineLimit(2)
                     .lineSpacing(2)
                     .foregroundColor(.secondary)
 
-                // 底部信息
-                HStack(spacing: 8) {
-                    // 来源
-                    HStack(spacing: 4) {
-                        Image(systemName: "building.2.fill")
-                            .font(.system(size: 10))
-                        Text(item.source)
-                            .font(.system(size: 11))
-                    }
-                    .foregroundColor(.secondary)
+                // 底部信息条 - 仿小红书风格
+                HStack(spacing: 4) {
+                    // 来源图标
+                    Image(systemName: "building.2")
+                        .font(.system(size: 9))
+                        .foregroundColor(.secondary)
+
+                    Text(item.source)
+                        .font(.system(size: 10))
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
 
                     Spacer()
 
                     // 时间
-                    HStack(spacing: 4) {
-                        Image(systemName: "clock.fill")
+                    Text(formatDate(item.publishedDate))
+                        .font(.system(size: 10))
+                        .foregroundColor(.secondary)
+
+                    // 点赞数占位
+                    HStack(spacing: 2) {
+                        Image(systemName: "hand.thumbsup.fill")
+                            .font(.system(size: 9))
+                        Text("\(Int.random(in: 50...500))")
                             .font(.system(size: 10))
-                        Text(formatDate(item.publishedDate))
-                            .font(.system(size: 11))
                     }
                     .foregroundColor(.secondary)
                 }
+                .padding(.top, 2)
             }
-            .padding(12)
+            .padding(10)
         }
         .background(Color(.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: .black.opacity(0.08), radius: 12, x: 0, y: 4)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .shadow(color: .black.opacity(0.06), radius: 8, x: 0, y: 3)
     }
 
     private func formatDate(_ dateString: String) -> String {
@@ -3352,12 +3379,12 @@ struct NewsDetailView: View {
                                                 endPoint: .bottomTrailing
                                             )
                                         )
-                                        .frame(height: 320)
+                                        .frame(height: 280)
                                 case .success(let image):
                                     image
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(height: 320)
+                                        .frame(height: 280)
                                 case .failure:
                                     Rectangle()
                                         .fill(
@@ -3367,91 +3394,135 @@ struct NewsDetailView: View {
                                                 endPoint: .bottomTrailing
                                             )
                                         )
-                                        .frame(height: 320)
+                                        .frame(height: 280)
                                         .overlay {
                                             Image(systemName: "newspaper.fill")
                                                 .font(.system(size: 70))
-                                                .foregroundColor(.gray.opacity(0.4))
+                                                .foregroundColor(.gray.opacity(0.3))
                                         }
                                 @unknown default:
                                     EmptyView()
                                 }
                             }
+                            // 渐变遮罩
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    Color.black.opacity(0),
+                                    Color.black.opacity(0.1),
+                                    Color.black.opacity(0.4)
+                                ]),
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                            .allowsHitTesting(false)
 
                             // 返回按钮
                             Button {
                                 dismiss()
                             } label: {
                                 Image(systemName: "xmark")
-                                    .font(.system(size: 20, weight: .bold))
+                                    .font(.system(size: 18, weight: .bold))
                                     .foregroundColor(.white)
-                                    .frame(width: 36, height: 36)
+                                    .frame(width: 32, height: 32)
                                     .background(
                                         Circle()
                                             .fill(.ultraThinMaterial)
-                                            .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 2)
+                                            .shadow(color: .black.opacity(0.25), radius: 6, x: 0, y: 2)
                                     )
                             }
-                            .padding(.leading, 16)
-                            .padding(.top, 16)
+                            .padding(.leading, 14)
+                            .padding(.top, 14)
+
+                            // 底部标题叠加
+                            VStack {
+                                Spacer()
+                                VStack(alignment: .leading, spacing: 8) {
+                                    HStack(spacing: 8) {
+                                        Text(newsItem.category)
+                                            .font(.system(size: 11, weight: .bold))
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal, 10)
+                                            .padding(.vertical, 4)
+                                            .background(categoryColor)
+                                            .clipShape(Capsule())
+                                        Spacer()
+                                    }
+                                    Text(newsItem.title)
+                                        .font(.system(size: 20, weight: .bold))
+                                        .foregroundColor(.white)
+                                        .lineSpacing(4)
+                                        .shadow(color: .black.opacity(0.5), radius: 4, x: 0, y: 2)
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.bottom, 20)
+                            }
                         }
 
                         // 内容卡片
-                        VStack(alignment: .leading, spacing: 24) {
-                            // 顶部信息
-                            VStack(alignment: .leading, spacing: 12) {
-                                // 分类标签
-                                Text(newsItem.category)
-                                    .font(.system(size: 13, weight: .semibold))
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 6)
-                                    .background(categoryColor)
-                                    .clipShape(Capsule())
-
-                                // 标题
-                                Text(newsItem.title)
-                                    .font(.system(size: 22, weight: .bold))
-                                    .lineSpacing(4)
-                                    .foregroundColor(.primary)
-
-                                // 作者和时间
-                                HStack(spacing: 16) {
-                                    HStack(spacing: 6) {
-                                        Circle()
-                                            .fill(categoryColor)
-                                            .frame(width: 8, height: 8)
-
-                                        Text(newsItem.source)
-                                            .font(.system(size: 13))
-                                            .foregroundColor(.secondary)
+                        VStack(alignment: .leading, spacing: 20) {
+                            // 作者信息
+                            HStack(spacing: 12) {
+                                // 来源图标
+                                Circle()
+                                    .fill(categoryColor)
+                                    .frame(width: 36, height: 36)
+                                    .overlay {
+                                        Image(systemName: "building.2.fill")
+                                            .font(.system(size: 16))
+                                            .foregroundColor(.white)
                                     }
 
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(newsItem.source)
+                                        .font(.system(size: 15, weight: .semibold))
+                                        .foregroundColor(.primary)
                                     HStack(spacing: 4) {
                                         Image(systemName: "clock")
+                                            .font(.system(size: 11))
+                                        Text(formatDateDetail(newsItem.publishedDate))
                                             .font(.system(size: 12))
-                                        Text(newsItem.publishedDate)
-                                            .font(.system(size: 13))
+                                        Text("·")
+                                            .font(.system(size: 12))
+                                            .foregroundColor(.secondary)
+                                        Text("\(Int.random(in: 200...2000)) 阅读")
+                                            .font(.system(size: 12))
                                             .foregroundColor(.secondary)
                                     }
+                                    .foregroundColor(.secondary)
+                                }
 
-                                    Spacer()
+                                Spacer()
+
+                                // 关注按钮
+                                Button {
+                                    // 关注功能
+                                } label: {
+                                    Text("关注")
+                                        .font(.system(size: 13, weight: .medium))
+                                        .foregroundColor(.white)
+                                        .padding(.horizontal, 20)
+                                        .padding(.vertical, 8)
+                                        .background(categoryColor)
+                                        .clipShape(Capsule())
                                 }
                             }
+                            .padding(.horizontal, 4)
 
                             Divider()
 
                             // 正文内容
-                            VStack(alignment: .leading, spacing: 20) {
-                                Text(newsItem.content)
-                                    .font(.system(size: 16))
-                                    .lineSpacing(10)
-                                    .foregroundColor(.primary)
-                            }
+                            Text(newsItem.content)
+                                .font(.system(size: 16))
+                                .lineSpacing(8)
+                                .foregroundColor(.primary)
                         }
-                        .padding(20)
-                        .background(Color(.systemBackground))
-                        .offset(y: -20)
+                        .padding(18)
+                        .background(
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(Color(.systemBackground))
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .offset(y: -16)
                     }
                 }
                 .background(Color(.systemGray6))
@@ -3552,6 +3623,36 @@ struct NewsDetailView: View {
         .onAppear {
             likeCount = Int.random(in: 50...500)
         }
+    }
+
+    private func formatDateDetail(_ dateString: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        if let date = formatter.date(from: dateString) {
+            let now = Date()
+            let calendar = Calendar.current
+            let days = calendar.dateComponents([.day], from: date, to: now).day ?? 0
+
+            if days == 0 {
+                let hour = calendar.dateComponents([.hour], from: date, to: now).hour ?? 0
+                if hour < 1 {
+                    let minute = calendar.dateComponents([.minute], from: date, to: now).minute ?? 0
+                    return minute < 1 ? "刚刚" : "\(minute)分钟前"
+                }
+                return "\(hour)小时前"
+            } else if days == 1 {
+                return "昨天"
+            } else if days < 30 {
+                return "\(days)天前"
+            } else if days < 365 {
+                let months = calendar.dateComponents([.month], from: date, to: now).month ?? 0
+                return "\(months)个月前"
+            } else {
+                formatter.dateFormat = "yyyy年MM月dd日"
+                return formatter.string(from: date)
+            }
+        }
+        return dateString
     }
 }
 
