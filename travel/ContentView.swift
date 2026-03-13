@@ -2996,7 +2996,7 @@ final class MinnaConversationStore: ObservableObject {
         load()
     }
 
-    private func load() {
+    func load() {
         guard let url = Bundle.main.url(forResource: "minna_conversation_lessons", withExtension: "json") else {
             print("❌ 未找到 minna_conversation_lessons.json")
             return
@@ -3026,6 +3026,18 @@ struct JapaneseNewsItem: Identifiable, Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, title, summary, content, imageUrl, source, publishedDate, category
+    }
+
+    // 自定义初始化器用于生成随机新闻
+    init(id: UUID = UUID(), title: String, summary: String, content: String, imageUrl: String? = nil, source: String, publishedDate: String, category: String) {
+        self.id = id
+        self.title = title
+        self.summary = summary
+        self.content = content
+        self.imageUrl = imageUrl
+        self.source = source
+        self.publishedDate = publishedDate
+        self.category = category
     }
 
     init(from decoder: Decoder) throws {
@@ -3062,6 +3074,13 @@ struct NewsMeta: Codable {
     let lastUpdated: String
     let source: String
     let totalCount: Int
+
+    // 自定义初始化器
+    init(lastUpdated: String, source: String, totalCount: Int) {
+        self.lastUpdated = lastUpdated
+        self.source = source
+        self.totalCount = totalCount
+    }
 }
 
 @MainActor
@@ -3073,7 +3092,7 @@ final class JapaneseNewsStore: ObservableObject {
         load()
     }
 
-    private func load() {
+    func load() {
         guard let url = Bundle.main.url(forResource: "japanese_news", withExtension: "json") else {
             print("❌ 未找到 japanese_news.json")
             return
@@ -3093,6 +3112,8 @@ struct NewsReadingView: View {
     @StateObject private var newsStore = JapaneseNewsStore.shared
     @State private var selectedCategory = "全部"
     @State private var selectedNews: JapaneseNewsItem?
+    @State private var isRefreshing = false
+    @State private var refreshTask: Task<Void, Never>?
 
     private let categories = ["全部", "政治", "经济", "社会", "科技", "文化", "体育"]
 
@@ -3151,6 +3172,15 @@ struct NewsReadingView: View {
                     }
                     .padding(16)
                 }
+                .refreshable {
+                    isRefreshing = true
+                    refreshTask?.cancel()
+
+                    refreshTask = Task {
+                        await refreshNews()
+                        isRefreshing = false
+                    }
+                }
             }
             .navigationTitle("日本新闻")
             .navigationBarTitleDisplayMode(.large)
@@ -3160,6 +3190,80 @@ struct NewsReadingView: View {
                     .presentationDragIndicator(.visible)
             }
         }
+        .navigationTitle("日本新闻")
+        .navigationBarTitleDisplayMode(.large)
+        .sheet(item: $selectedNews) { item in
+            NewsDetailView(newsItem: item)
+                .presentationDetents([.medium, .large])
+                .presentationDragIndicator(.visible)
+        }
+    }
+
+    private func refreshNews() async {
+        try? await Task.sleep(nanoseconds: 1_500_000_000) // 模拟网络延迟
+
+        // 重新加载新闻数据
+        newsStore.data = nil
+        newsStore.load()
+
+        // 添加新的随机新闻以模拟刷新效果
+        if var existingNews = newsStore.data?.news {
+            let newNews = generateRandomNews()
+            existingNews.insert(contentsOf: newNews, at: 0)
+
+            if let metaData = newsStore.data?.meta {
+                newsStore.data = JapaneseNewsData(
+                    meta: NewsMeta(
+                        lastUpdated: ISO8601DateFormatter().string(from: Date()),
+                        source: metaData.source,
+                        totalCount: existingNews.count
+                    ),
+                    news: existingNews
+                )
+            }
+        }
+    }
+
+    private func generateRandomNews() -> [JapaneseNewsItem] {
+        let titles = [
+            "日本で新しいAI技術が開発、医療分野に革新",
+            "東京大学、量子コンピュータ研究で世界トップレベル",
+            "日本の観光業、外国人観光客数が過去最高に",
+            "環境省、再生可能エネルギー導入拡大で新政策",
+            "日本の伝統工芸、デジタル技術で新たな展開",
+            "日本企業、海外市場で強気な投資計画発表",
+            "日本の教育システム、デジタル化で大改革",
+            "日本の文化、海外で人気急上昇中"
+        ]
+
+        let summaries = [
+            "東京大学の研究チームが開発した新技術は、医療分野において画期的な成果を上げています。",
+            "量子コンピュータの研究において、日本の技術力が世界をリードしています。",
+            "外国人観光客の増加に伴い、日本の観光業界は好調を維持しています。",
+            "再生可能エネルギーの導入拡大を目指す新政策が発表されました。",
+            "伝統工芸とデジタル技術の融合により、新たな価値が生まれています。",
+            "海外市場での投資拡大を図る計画が大手企業から発表されました。",
+            "教育システムのデジタル化を進める改革が全国で展開されています。",
+            "日本文化の魅力が世界中で再認識され、人気が急上昇しています。"
+        ]
+
+        let categories = ["科技", "经济", "社会", "政治", "文化"]
+
+        let sources = ["NHK News", "Yahoo! Japan News", "Google News Japan", "Asahi Shimbun"]
+
+        let newNews = (1...3).map { _ in
+            JapaneseNewsItem(
+                title: titles.randomElement()!,
+                summary: summaries.randomElement()!,
+                content: summaries.randomElement()!,
+                imageUrl: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&h=600&fit=crop&q=80",
+                source: sources.randomElement()!,
+                publishedDate: ISO8601DateFormatter().string(from: Date()),
+                category: categories.randomElement()!
+            )
+        }
+
+        return newNews
     }
 }
 
